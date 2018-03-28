@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import './text.css'
-const TextView = () => {
+const TextView = (props) => {
 
 
 
@@ -8,10 +8,10 @@ const TextView = () => {
 
         <div className="card text">
             <div className="card-body">
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p className="card-text">{props.data.text}</p>
                 <div className="card-body">
-                    <p className="card-text videoPost">Video Post</p>
-                    <p className="card-text comment">15 Comments</p>
+                    <p className="card-text videoPost">{props.data.type} Post</p>
+                    <p className="card-text comment">{props.data.commentsNum} Comments</p>
                 </div>
             </div>
         </div>
