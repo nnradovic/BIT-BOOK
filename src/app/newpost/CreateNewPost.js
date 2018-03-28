@@ -1,50 +1,76 @@
 import React from 'react'
 import { Component } from 'react'
 
-
-
 class CreateNewPost extends Component {
-constructor(props){
+  constructor(props) {
     super(props)
-    console.log(props)
+
     this.state = {
-
+      btn: this.props.data
     }
-}
+  }
 
+  componentDidMount() {
+    this.setState({
+      btn: this.props.data
+    })
+  }
 
-chooseModal = () =>  {
-    if(this.props.btn ===  "btn2 btn-danger btn-all"){
-        return   "radi"
-    }
-    else if(this.props.btn === "button.btn3.btn-info.btn-all" ){
-        return "ne radi"
-    }
-}
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      btn: nextProps.data
+    })
+    // console.log(this.state.btn)
+  }
 
-
-render(){
-    return(      
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New post</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  chooseModal = () => {
+    if (this.state.btn === "post") {
+      return (
+      <div>
+      <p>post content</p>
+      <input type="text" className="form-control" id="exampleInputText" aria-describedby="textHelp"/>
       </div>
-    
-            {this.chooseModal}
-     
-      <div class="modal-footer">
-      
-        <button type="button" class="btn btn-primary">POST</button>
+      )
+    } else if (this.state.btn === "image") {
+      return (
+        <div>
+      <p>post image url</p>
+      <input type="text" className="form-control" id="exampleInputImage" aria-describedby="imageHelp"/>
       </div>
-    </div>
-  </div>
-</div>
+      )
+    } else if (this.state.btn === "video") {
+      return (
+        <div>
+        <p>post video src</p>
+        <input type="video" className="form-control" id="exampleInputImage" aria-describedby="imageHelp"/>
+        </div>
+      )
+    }
+  }
+
+  render() {
+    console.log(this.state.btn)
+    return (
+      <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h3 className="modal-title" id="exampleModalLabel">New post</h3>
+              <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this.props.modalClosed}>
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+              {this.chooseModal()}
+            </div>
+            <div className="modal-footer">
+
+              <button type="button" className="btn btn-primary">POST</button>
+            </div>
+          </div>
+        </div>
+      </div>
     )
-}
+  }
 }
 export default CreateNewPost

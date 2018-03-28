@@ -73,7 +73,7 @@
     }
 
     /*buttons*/
-
+/* 
     .btn-all{
     width: 50px;
      height: 50px;
@@ -110,8 +110,13 @@
       bottom:28%;
       right: 5%;
       border:none;
-    }
+    } */
 
+ .modal-dialog{
+   position:fixed;
+   top:20%;
+   left:37%
+ }
 
   /*modal inputs*/
 .no-border{
