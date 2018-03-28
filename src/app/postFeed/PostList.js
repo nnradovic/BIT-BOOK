@@ -3,7 +3,8 @@ import VideoView from "./VideoView";
 import TextView from "./TextView";
 import ImageView from "./ImageView";
 import { postService } from "./../../service/postService";
-import { url, textUrlGet } from "./../../shares/constans"
+import { url, textUrlGet } from "./../../shares/constans";
+
 class PostList extends React.Component {
     constructor(props) {
         super(props);
@@ -11,15 +12,17 @@ class PostList extends React.Component {
             posts: []
         }
     }
+
     componentDidMount() {
         postService.getPosts(`${url}${textUrlGet}`)
             .then(postList => {
-                console.log(postList);
+
                 this.setState({
                     posts: postList
                 })
             })
     }
+
 
     render() {
         const posts = this.state.posts;

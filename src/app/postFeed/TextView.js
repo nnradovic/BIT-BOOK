@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
-import './text.css'
+import './text.css';
+import { Link } from 'react-router-dom';
 const TextView = (props) => {
 
 
-
     return (
-
+<Link to={`/textview/${props.data.id}`}>
         <div className="card text">
             <div className="card-body">
                 <p className="card-text">{props.data.text}</p>
@@ -15,6 +15,7 @@ const TextView = (props) => {
                 </div>
             </div>
         </div>
+        </Link>
     )
 
 }

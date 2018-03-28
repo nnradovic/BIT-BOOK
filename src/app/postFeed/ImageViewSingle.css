@@ -1,0 +1,17 @@
+.comm{
+   background:#6d7993;
+   border:2px solid black;
+}
+.float-left{
+    /* padding-right: 20px; */
+    border-radius: 40px;
+}
+.comText{
+    padding-left: 100px;
+    padding-top: 15px;
+}
+.comName{
+    padding-left: 30px;
+    color: white;
+    font-weight: 800;
+}
