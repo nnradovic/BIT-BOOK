@@ -4,7 +4,7 @@ class Post {
         this.dateCreated = new Date(post.dateCreated);
         this.userId = post.userId;
         this.userDisplayName = post.userDisplayName;
-        this.type = post.type;
+        this.type = post.type.charAt(0).toUpperCase() + post.type.slice(1);
         this.commentsNum = post.commentsNum;
     }
     getDatum() {
@@ -16,14 +16,20 @@ class Post {
     }
 
 
+    // isVideo() {
+    //     return this.type === 'video'
+    // }
+    // https://www.youtube.com/embed/CwjhxtBmQys
+
 }
 
 
 class Video extends Post {
     constructor(post) {
         super(post)
-        this.imageUrl = post.imageUrl;
+        this.videoUrl = post.videoUrl.replace("watch?v=", "embed/");
     }
+
 }
 class Text extends Post {
     constructor(post) {
@@ -34,7 +40,7 @@ class Text extends Post {
 class Image extends Post {
     constructor(post) {
         super(post)
-        this.videoUrl = post.videoUrl;
+        this.imageUrl = post.imageUrl;
     }
 }
 export { Video, Text, Image };

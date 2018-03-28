@@ -17,13 +17,7 @@ class PostService {
                     } else {
                         return new Text(post)
                     }
-
-                    // post.type === 'image' ? new Image(post) :
-                    //     post.videoUrl === 'video' ? new Video(post) :
-                    //         new Text(post)
                 }
-
-
 
                 )
             })

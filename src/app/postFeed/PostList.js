@@ -30,25 +30,15 @@ class PostList extends React.Component {
                         <div className="col-8 offset-2">
 
                             {posts.map(post => {
-                                if (post.instanceOf === 'Video') {
-                                    return <VideoView />
-                                } else if (post.instanceOf === 'Image') {
-                                    return <ImageView />
+                                if (post.type === 'Video') {
+                                    return <VideoView key={post.id} data={post} />
+                                } else if (post.type === 'Image') {
+                                    return <ImageView key={post.id} data={post} />
                                 } else {
-                                    return <TextView />
+                                    return <TextView key={post.id} data={post} />
                                 }
                             })}
-                            {/* <VideoView />
-                            <br />
-                            <VideoView />
-                            <br />
-                            <TextView />
-                            <br />
-                            <TextView />
-                            <br />
-                            <TextView />
-                            <br />
-                            <ImageView /> */}
+
                         </div >
                     </div >
                 </div >
