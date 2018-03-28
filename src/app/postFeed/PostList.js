@@ -5,60 +5,55 @@ import ImageView from "./ImageView";
 import CreateNewPost from '../newpost/CreateNewPost'
 import "./PostList.css";
 
+import { postService } from "./../../service/postService";
+import { url, textUrlGet } from "./../../shares/constans"
 class PostList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             btn: "",
-            showModal: false
+            posts:[]
         }
     }
 
     handleState = (event) => {
         this.setState({
-            btn: event.target.id,
-            showModal: !this.state.showModal
+            btn: event.target.id
         })
     }
 
-    closeModal = () => {
-        this.setState({
-            showModal: false
+    
+    // render() {
+    //     console.log(this.state.showModal)
+    //         posts: []
+    //     }
+    // }
+    componentDidMount() {
+        postService.getPosts(`${url}${textUrlGet}`)
+            .then(postList => {
+                this.setState({
+                    posts: postList
+                })
+            })
+    }
+
+    getPostsAgain = () => {
+        postService.getPosts(`${url}${textUrlGet}`)
+        .then(postList => {
+            this.setState({
+                posts: postList
+            })
         })
     }
 
     render() {
-        console.log(this.state.showModal)
+        const posts = this.state.posts;
         return (
             <Fragment>
                 <div className="container">
                     <div className="row">
-                        <div className="col-8 offset-2">
-                            <VideoView />
-                            <br />
-                            <VideoView />
-                            <br />
-                            <TextView />
-                            <br />
-                            <TextView />
-                            <br />
-                            <TextView />
-                            <br />
-                            <ImageView />
-                            {/* <div>
-                                <button type="button" className="btn4 btn-warning btn-all" onClick={this.handleState} data-toggle="modal" data-target="#exampleModal">
-                                    +
-                                </button>
-                                <button type="button" className="btn2 btn-success btn-all" onClick={this.handleState} data-toggle="modal" data-target="#exampleModal">
-
-                                </button>
-                                <button type="button" className="btn1 btn-danger btn-all" onClick={this.handleState} data-toggle="modal" data-target="#exampleModal">
-
-                                </button>
-                                <button type="button" className="btn3 btn-info btn-all" onClick={this.handleState} data-toggle="modal" data-target="#exampleModal">
-
-                                </button>
-                            </div> */}
+                        <div className="col-10 offset-1">
+                           
 
                             <div class="menu pmd-floating-action" role="navigation">
                                
@@ -78,7 +73,18 @@ class PostList extends React.Component {
                                 </a>
                             </div>
 
-                            <CreateNewPost data={this.state.btn} modalClosed={this.closeModal} />
+                            <CreateNewPost data={this.state.btn} getPosts={this.getPostsAgain} />
+
+                            {posts.map(post => {
+                                if (post.type === 'Video') {
+                                    return <VideoView key={post.id} data={post} />
+                                } else if (post.type === 'Image') {
+                                    return <ImageView key={post.id} data={post} />
+                                } else {
+                                    return <TextView key={post.id} data={post} />
+                                }
+                            })}
+
                         </div >
                     </div >
                 </div >

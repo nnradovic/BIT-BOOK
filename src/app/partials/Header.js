@@ -2,7 +2,7 @@ import React from 'react'
 const Header = () => {
     return (
         <div className="container-fluid">
-            <div className="container">
+            {/* <div className="container"> */}
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <a className="navbar-brand text-white" href="#">Bitbook</a>
                     <button className="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@ const Header = () => {
                         </div>
                     </div>
                 </nav>
-            </div >
+            {/* </div > */}
         </div>
     )
 }

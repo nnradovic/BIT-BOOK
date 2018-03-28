@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react';
 import './image.css'
-const ImageView = () => {
+const ImageView = (props) => {
 
 
 
     return (
         <Fragment>
             <div className="card imageCard">
-                <img className="card-img-top" src="http://via.placeholder.com/1200x600" alt="Card image cap" />
+                <img className="card-img-top" src={props.data.imageUrl} alt="Card image cap" />
                 <div className="card-body">
-                    <p className="card-text videoPost">Video Post</p>
-                    <p className="card-text comment">15 Comments</p>
+                    <p className="card-text videoPost">{props.data.type} Post</p>
+                    <p className="card-text comment">{props.data.commentsNum} Comments</p>
                 </div>
             </div>
         </Fragment>
