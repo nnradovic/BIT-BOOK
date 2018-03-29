@@ -4,6 +4,7 @@ import TextView from "./TextView";
 import ImageView from "./ImageView";
 import { postService } from "./../../service/postService";
 import { url, textUrlGet } from "./../../shares/constans";
+import PostItem from "./PostItem";
 
 class PostList extends React.Component {
     constructor(props) {
@@ -33,23 +34,7 @@ class PostList extends React.Component {
                         <div className="col-8 offset-2">
 
                             {posts.map(post => {
-                                if (post.type === 'Video') {
-                                    return (
-                                        <div>
-                                            <VideoView key={post.id} data={post} />
-                                            <br />
-                                        </div>
-                                    )
-                                } else if (post.type === 'Image') {
-                                    return (
-                                        <div>
-                                            <ImageView key={post.id} data={post} />
-                                            <br />
-                                        </div>
-                                    )
-                                } else {
-                                    return <TextView key={post.id} data={post} />
-                                }
+                                return <PostItem post={post} />
                             })}
 
                         </div >

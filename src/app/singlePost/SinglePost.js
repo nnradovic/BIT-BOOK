@@ -1,28 +1,56 @@
 import React, { Fragment } from 'react';
-import './video.css'
-import { url, textUrlGet, videoUrlSingle, commentUrl } from "./../../shares/constans"
+import './SinglePost.css'
+import { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl } from "./../../shares/constans"
 import { postService } from "./../../service/postService";
-import Comment from "./Comment";
+import Comment from "./../postFeed/Comment";
+import PostContent from './../postFeed/PostContent';
 
 
-class VideoViewSingle extends React.Component {
+class SinglePost extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            video: '',
-            comments: []
+            postItem: '',
+            comments: [],
+
         }
+        console.log(props);
+
     }
+
+
     componentDidMount() {
-        postService.getSingleVideoPosts(`${url}${videoUrlSingle}${this.props.match.params.id}`)
-            .then(video => {
-                console.log(video);
-                this.setState({
-                    video: video
+        if (this.props.match.params.type === "video") {
+            //VIDEO
+            postService.getSingleVideoPosts(`${url}${videoUrlSingle}${this.props.match.params.id}`)
+                .then(video => {
+
+                    this.setState({
+                        postItem: video
+                    })
+
                 })
+        } else if (this.props.match.params.type === "text") {
+            // TEXT
+            postService.getSingleTextPosts(`${url}${textUrlSingle}${this.props.match.params.id}`)
+                .then(text => {
+                    this.setState({
+                        postItem: text
+                    })
 
-            })
+                })
+        } else {
+            // IMAGE
+            postService.getSingleImagePosts(`${url}${imageUrlSingle}${this.props.match.params.id}`)
+                .then(image => {
+                    this.setState({
+                        postItem: image
+                    })
 
+                })
+        }
+
+        //ALL
         postService.getComments(`${url}${commentUrl}${this.props.match.params.id}`)
             .then(comments => {
                 console.log(comments);
@@ -33,31 +61,26 @@ class VideoViewSingle extends React.Component {
     }
 
 
+
     render() {
+
+
         return (
+
             <Fragment>
                 <div className="container">
                     <div className="row">
                         <div className="col-8 offset-2">
-                            <br />
-                            <div className="card ">
-                                <div className="pad">
-                                    <div className="embed-responsive embed-responsive-16by9">
-                                        <iframe width="420" height="315" src={this.state.video.videoUrl} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
-                                    </div>
-                                    <div className="card-body">
-                                        <p className="card-text videoPost textBoot">{this.state.video.type} Post</p>
-                                        <p className="card-text comment textBoot">{this.state.video.commentsNum} Comments</p>
-                                    </div>
+                            <div className="card text">
+                                <div className="card-body">
+                                    <PostContent post={this.state.postItem} />
                                 </div>
                             </div>
-                            <br />
                             <div className="input-group mb-3">
                                 <input type="text" className="form-control" placeholder="Add your comment .." aria-label="Recipient's username" aria-describedby="basic-addon2" />
                                 <div className="input-group-append">
                                     <button className="btn btn-outline-secondary" type="button">SEND</button>
                                 </div>
-
                             </div>
                             {this.state.comments.map(comment => {
                                 return (
@@ -65,19 +88,14 @@ class VideoViewSingle extends React.Component {
                                         <Comment key={comment.id} data={comment} />
                                         <br />
                                     </div>
-
                                 )
-
                             })}
                         </div>
                     </div>
-
                 </div>
-
-
             </Fragment >
         )
 
     }
 }
-export default VideoViewSingle;
+export default SinglePost;
