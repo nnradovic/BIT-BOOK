@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import './video.css'
 const VideoView = (props) => {
 
-    console.log(props.data.videoUrl);
 
     // src={"https://www.youtube.com/embed/CwjhxtBmQys"}
     return (
