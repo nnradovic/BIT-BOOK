@@ -20,10 +20,10 @@ class VideoViewSingle extends React.Component {
                 this.setState({
                     video: video
                 })
-               
+
             })
 
-            postService.getComments(`${url}${commentUrl}${this.props.match.params.id}`)
+        postService.getComments(`${url}${commentUrl}${this.props.match.params.id}`)
             .then(comments => {
                 console.log(comments);
                 this.setState({
@@ -39,19 +39,19 @@ class VideoViewSingle extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-8 offset-2">
-                      <br/>
-                        <div className="card ">
-                    <div className="pad">
-                        <div className="embed-responsive embed-responsive-16by9">
-                            <iframe width="420" height="315" src={this.state.video.videoUrl} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
-                        </div>
-                        <div className="card-body">
-                            <p className="card-text videoPost">{this.state.video.type} Post</p>
-                            <p className="card-text comment">{this.state.video.commentsNum} Comments</p>
-                        </div>
-                    </div>
-                        </div>
-                                <br/>
+                            <br />
+                            <div className="card ">
+                                <div className="pad">
+                                    <div className="embed-responsive embed-responsive-16by9">
+                                        <iframe width="420" height="315" src={this.state.video.videoUrl} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+                                    </div>
+                                    <div className="card-body">
+                                        <p className="card-text videoPost textBoot">{this.state.video.type} Post</p>
+                                        <p className="card-text comment textBoot">{this.state.video.commentsNum} Comments</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
                             <div className="input-group mb-3">
                                 <input type="text" className="form-control" placeholder="Add your comment .." aria-label="Recipient's username" aria-describedby="basic-addon2" />
                                 <div className="input-group-append">
@@ -59,22 +59,23 @@ class VideoViewSingle extends React.Component {
                                 </div>
 
                             </div>
- </div>
- </div>
-                          {this.state.comments.map(comment => {
+                            {this.state.comments.map(comment => {
                                 return (
-                                     <div>
-                                    <Comment key={comment.id} data={comment}/>
-                                    <br />
+                                    <div>
+                                        <Comment key={comment.id} data={comment} />
+                                        <br />
                                     </div>
+
                                 )
-                                                                
-                            })} 
-                            <br />
+
+                            })}
                         </div>
-                    
-        
-            </Fragment>
+                    </div>
+
+                </div>
+
+
+            </Fragment >
         )
 
     }

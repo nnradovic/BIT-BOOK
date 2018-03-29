@@ -6,4 +6,4 @@ const textUrlSingle = 'api/TextPosts/'
 const commentUrl = 'api/Comments?postId='
 const usersUrl = 'api/users?postId='
 
-export { url, textUrlGet, imageUrlSingle , videoUrlSingle , textUrlSingle, commentUrl, usersUrl }
+export { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl }

@@ -34,9 +34,19 @@ class PostList extends React.Component {
 
                             {posts.map(post => {
                                 if (post.type === 'Video') {
-                                    return <VideoView key={post.id} data={post} />
+                                    return (
+                                        <div>
+                                            <VideoView key={post.id} data={post} />
+                                            <br />
+                                        </div>
+                                    )
                                 } else if (post.type === 'Image') {
-                                    return <ImageView key={post.id} data={post} />
+                                    return (
+                                        <div>
+                                            <ImageView key={post.id} data={post} />
+                                            <br />
+                                        </div>
+                                    )
                                 } else {
                                     return <TextView key={post.id} data={post} />
                                 }

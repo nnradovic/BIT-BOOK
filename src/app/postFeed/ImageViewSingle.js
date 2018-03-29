@@ -44,13 +44,13 @@ class ImageViewSingle extends React.Component {
         return (
             <Fragment>
                 <div className="container">
-                    <div className="row">
+                    <div className="row singleRow">
                         <div className="col-8 offset-2">
                             <div className="card imageCard">
                                 <img className="card-img-top" src={this.state.image.imageUrl} alt="Card image cap" />
                                 <div className="card-body">
-                                    <p className="card-text videoPost">{this.state.image.type} Post</p>
-                                    <p className="card-text comment">{this.state.image.commentsNum} Comments</p>
+                                    <p className="card-text videoPost textBoot">{this.state.image.type} Post</p>
+                                    <p className="card-text comment textBoot">{this.state.image.commentsNum} Comments</p>
                                 </div>
 
                             </div>

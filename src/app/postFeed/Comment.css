@@ -1,0 +1,17 @@
+.comm{
+    background: white;
+    color: #081522;
+}
+.comText{
+    color: #081522;
+    margin-left:220px;
+    margin-top: 40px;
+}
+.float-left{
+    border: 2px solid #081522;
+    border-radius: 50%;
+
+}
+.comN{  
+  margin-left: 40px;
+}

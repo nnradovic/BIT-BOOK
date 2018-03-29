@@ -1,17 +1,32 @@
-.comm{
-   background:#6d7993;
-   border:2px solid black;
+.imageCard{
+    margin: 20px 0;
 }
-.float-left{
-    /* padding-right: 20px; */
-    border-radius: 40px;
+.row{
+    min-height: 1000px;
 }
-.comText{
-    padding-left: 100px;
-    padding-top: 15px;
+.input-group  {
+    background:#102E4A;
+    height: 50px;
+    border: 2px solid #102E4A;
+    
 }
-.comName{
-    padding-left: 30px;
+.form-control{
+    font-size: 22px;
+}
+.form-control[placeholder]{
+    color: black;   
+}
+.btn-outline-secondary{
+    background: #102E4A;
     color: white;
-    font-weight: 800;
+    font-size: 22px;
+    font-weight: 500;
+}
+.btn-outline-secondary:hover{
+    background: white;
+    color:#102E4A;
+}
+.textBoot{
+    font-size: 25px;
+    font-weight: 600;
 }

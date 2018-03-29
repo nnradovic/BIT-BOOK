@@ -1,5 +1,17 @@
 .text{
-    background-color: #96858F;
+    background-color: #25415A;
     padding:  0 10px;
-    border:2px solid black; 
+    border:2px solid #D3D9DE;
+    margin: 20px 0; 
+}
+.textFeed{
+    margin: 20px;
+    font-weight: 500;
+    border-bottom: 2px solid #D3D9DE;
+    text-decoration: none;
+    font-size: 22px;
+}
+.textBoot{
+    font-size: 25px;
+    font-weight: 600;
 }

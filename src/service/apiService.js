@@ -10,7 +10,6 @@ const myFetchGet = (url) => {
     return fetch(url, requestOpt).then(response => {
 
         return response.json()
-        console.log(response.json())
 
     });
 }
