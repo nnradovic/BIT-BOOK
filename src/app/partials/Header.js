@@ -4,7 +4,7 @@ const Header = () => {
         <div className="container-fluid">
             {/* <div className="container"> */}
                 <nav className="navbar navbar-expand-lg navbar-light">
-                    <a className="navbar-brand text-white" href="#">Bitbook</a>
+                    <a className="navbar-brand text-white logo" href="#"><i className="ion-planet"></i> Bitbook</a>
                     <button className="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -12,13 +12,13 @@ const Header = () => {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ">
                                 <li className="nav-item active">
-                                    <a className="nav-link text-white" href="#">Feed </a>
+                                    <a className="nav-link text-white navMenu" href="#"> <i className="ion-arrow-graph-up-right"></i> Feed </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link text-white" href="#">People</a>
+                                    <a className="nav-link text-white navMenu" href="#"> <i className="ion-ios-pulse-strong"></i> People</a> 
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link text-white" href="#">Profile</a>
+                                    <a className="nav-link text-white navMenu" href="#"><i className="ion-android-person"></i>  Profile</a>
                                 </li>
                             </ul>
                         </div>

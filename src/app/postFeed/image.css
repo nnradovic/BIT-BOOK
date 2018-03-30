@@ -1,6 +1,17 @@
 .imageCard{
-    background-color: #96858F;
+    background-color: #25415A;
     padding:  20px;
-    border:2px solid black; 
-    margin-bottom: 20px;
+    border:2px solid #D3D9DE;
+ 
+}
+.textFeed{
+    margin: 20px;
+    font-weight: 500;
+    border-bottom: 2px solid #D3D9DE;
+    text-decoration: none;
+    font-size: 22px;
+}
+.textBoot{
+    font-size: 25px;
+    font-weight: 600;
 }

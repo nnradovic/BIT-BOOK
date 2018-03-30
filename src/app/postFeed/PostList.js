@@ -7,7 +7,9 @@ import "./PostList.css";
 import Button from './Button'
 
 import { postService } from "./../../service/postService";
-import { url, textUrlGet } from "./../../shares/constans"
+import { url, textUrlGet } from "./../../shares/constans";
+import PostItem from "./PostItem";
+
 class PostList extends React.Component {
     constructor(props) {
         super(props);
@@ -17,12 +19,15 @@ class PostList extends React.Component {
         }
     }
 
+
     handleState = (event) => {
         this.setState({
             btn: event.target.id
         })
     }
 
+=======
+ master
     componentDidMount() {
         postService.getPosts(`${url}${textUrlGet}`)
             .then(postList => {
@@ -31,6 +36,7 @@ class PostList extends React.Component {
                 })
             })
     }
+
 
     getPostsAgain = () => {
         postService.getPosts(`${url}${textUrlGet}`)
@@ -44,6 +50,8 @@ class PostList extends React.Component {
     // getDataFromButton = (dataFromButton)=>{
     //     this.setState({btnType:dataFromButton})
     // }
+=======
+
 
     render() {
         const posts = this.state.posts;
@@ -75,13 +83,7 @@ class PostList extends React.Component {
                             <PostModal data={this.state.btn} getPosts={this.getPostsAgain} />
 
                             {posts.map(post => {
-                                if (post.type === 'Video') {
-                                    return <VideoView key={post.id} data={post} />
-                                } else if (post.type === 'Image') {
-                                    return <ImageView key={post.id} data={post} />
-                                } else {
-                                    return <TextView key={post.id} data={post} />
-                                }
+                                return <PostItem post={post} key={post.id} />
                             })}
 
                         </div >
