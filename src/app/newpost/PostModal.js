@@ -49,11 +49,11 @@ class PostModal extends Component {
   renderPostForm = () => {
     if (this.state.postType === "post") {
 
-      return <TextPostModal data={this.createPost} data1={this.handlePostChange} data2={this.state.value}/>
+      return <TextPostModal data={this.createPost} data1={this.handlePostChange} data2={this.state.value} />
       
     } else if (this.state.postType === "image") {
 
-      return <ImagePostModal data={this.createPost} data1={this.handlePostChange} data2={this.state.value} />
+      return <ImagePostModal data={this.createPost} data1={this.handlePostChange} data2={this.state.value}  />
 
     } else if (this.state.postType === "video") {
 

@@ -1,15 +1,23 @@
 import React from 'react'
+import {Component} from 'react'
 
-const TextPostModal = ({data, data1, data2}) => {
+class TextPostModal extends Component {
+  constructor(props){
+    super(props)
+  }
 
+
+
+  render(){
     return(
         <div>
         <p>post content</p>
-        <input type="text" onChange={data1} className="form-control" id="exampleInputText"  aria-describedby="textHelp" />
+        <input type="text" onChange={this.props.data1} className="form-control" id="exampleInputText" placeholder="Enter your text post" aria-describedby="textHelp" />
         <div className="modal-footer">
-          <button type="button" onClick={data} value={data2} data-dismiss="modal" className="btn btn-primary">POST</button>
+          <button type="button" onClick={this.props.data} ref="fieldName" value={this.props.data2} data-dismiss="modal" className="btn btn-primary">POST</button>
         </div>
       </div>
     )
+  }
 }
 export default TextPostModal
