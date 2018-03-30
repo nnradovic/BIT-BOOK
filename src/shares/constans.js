@@ -6,10 +6,6 @@ const newImagePostUrl = "http://bitbookapi.azurewebsites.net/api/ImagePosts/"
 const newVideoPostUrl = "http://bitbookapi.azurewebsites.net/api/VideoPosts/"
 const validYoutube = "https://www.youtube.com/watch?v="
 const validImageUrl = [".jpg", ".jpeg", ".png", ".svg", ".gif"]
-
-
-export { url, textUrlGet, newTextPostUrl, newImagePostUrl, newVideoPostUrl, validYoutube,validImageUrl }
-
 const imageUrlSingle = 'api/ImagePosts/'
 const videoUrlSingle = 'api/VideoPosts/'
 const textUrlSingle = 'api/TextPosts/'
@@ -22,4 +18,4 @@ const TYPES = {
 }
 
 
-export { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl, TYPES }
+export { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl, TYPES, newTextPostUrl, newImagePostUrl, newVideoPostUrl, validYoutube,validImageUrl }

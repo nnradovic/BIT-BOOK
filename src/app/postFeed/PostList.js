@@ -26,8 +26,8 @@ class PostList extends React.Component {
         })
     }
 
-=======
- master
+
+
     componentDidMount() {
         postService.getPosts(`${url}${textUrlGet}`)
             .then(postList => {
@@ -50,7 +50,7 @@ class PostList extends React.Component {
     // getDataFromButton = (dataFromButton)=>{
     //     this.setState({btnType:dataFromButton})
     // }
-=======
+
 
 
     render() {
