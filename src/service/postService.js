@@ -1,6 +1,7 @@
 import { Video, Text, Image } from './../entities/Post';
 import { Comment } from './../entities/Comments';
 import { User } from './../entities/User';
+import { Profile } from './../entities/Profile'
 import myFetchGet from './apiService';
 
 class PostService {
@@ -60,6 +61,14 @@ class PostService {
                 return users.map(user => {
                     return new User(user)
                 })
+            })
+    }
+    getProfile = (url) => {
+        return myFetchGet(url)
+            .then(profile => {
+
+                return new User(profile)
+
             })
     }
 

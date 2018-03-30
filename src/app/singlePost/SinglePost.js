@@ -68,7 +68,8 @@ class SinglePost extends React.Component {
             .then(comments => {
 
                 this.setState({
-                    comments: comments
+                    comments: comments,
+                    newComment: ""
                 })
             })
     }
@@ -99,7 +100,10 @@ class SinglePost extends React.Component {
 
     btnDisabled = () => {
         if (this.state.newComment === "") {
-            return <button className="btn btn-outline-secondary" type="button" disabled>SEND</button>
+            return (
+
+                <button className="btn btn-outline-secondary" type="button" disabled>SEND</button>
+            )
         } else {
             return <button className="btn btn-outline-secondary" onClick={this.postComment} type="button">SEND</button>
         }
@@ -119,12 +123,14 @@ class SinglePost extends React.Component {
                                     <PostContent post={this.state.postItem} key={this.state.postItem.id} />
                                 </div>
                             </div>
+
                             <div className="input-group mb-3">
-                                <input onChange={this.handleChange} type="text" name="newComment" value={this.state.newComment} className="form-control" placeholder="Add your comment .." aria-label="Recipient's username" aria-describedby="basic-addon2" />
                                 <div className="input-group-append">
-                                    {this.btnDisabled()} {/* <button className="btn btn-outline-secondary" onClick={this.postComment} type="button">SEND</button> */}
+                                    <input onChange={this.handleChange} type="text" name="newComment" value={this.state.newComment} className="form-control" placeholder="Add your comment .." aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                                    {this.btnDisabled()}
                                 </div>
                             </div>
+
                             {this.state.comments.map(comment => {
                                 return (
                                     <div>
