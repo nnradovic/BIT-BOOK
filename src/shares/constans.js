@@ -10,6 +10,7 @@ const imageUrlSingle = 'api/ImagePosts/'
 const videoUrlSingle = 'api/VideoPosts/'
 const textUrlSingle = 'api/TextPosts/'
 const commentUrl = 'api/Comments?postId='
+const commentPost = 'api/Comments'
 const usersUrl = 'api/users?postId='
 const TYPES = {
     VIDEO: "video",
@@ -18,4 +19,4 @@ const TYPES = {
 }
 
 
-export { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl, TYPES, newTextPostUrl, newImagePostUrl, newVideoPostUrl, validYoutube,validImageUrl }
+export { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentPost, commentUrl, usersUrl, TYPES, newTextPostUrl, newImagePostUrl, newVideoPostUrl, validYoutube, validImageUrl }

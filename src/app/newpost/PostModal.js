@@ -1,6 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
-import {addNewPost}  from '../../service/AddNewPost'
+import { addNewPost } from '../../service/AddNewPost'
 import TextPostModal from './TextPostModal'
 import ImagePostModal from './ImagePostModal'
 import VideoPostModal from './VideoPostModal'
@@ -12,7 +12,7 @@ class PostModal extends Component {
 
     this.state = {
       postType: "",
-      value:""
+      value: ""
     }
   }
 
@@ -29,19 +29,19 @@ class PostModal extends Component {
   }
 
   handlePostChange = (event) => {
-    this.setState({ value:event.target.value })
+    this.setState({ value: event.target.value })
   }
 
   createPost = () => {
-   addNewPost.postNewPost(this.state.value, this.state.postType)
-   .then((response) => {
-    this.props.getPosts();
-    this.clearInputs();
-  })
-  .catch((error) => console.info(error))
+    addNewPost.postNewPost(this.state.value, this.state.postType)
+      .then((response) => {
+        this.props.getPosts();
+
+      })
+      .catch((error) => console.info(error))
   }
 
- 
+
   // clearInputs = () => {
   //   this.refs.fieldName.value = "";
   // }
@@ -50,10 +50,10 @@ class PostModal extends Component {
     if (this.state.postType === "post") {
 
       return <TextPostModal data={this.createPost} data1={this.handlePostChange} data2={this.state.value} />
-      
+
     } else if (this.state.postType === "image") {
 
-      return <ImagePostModal data={this.createPost} data1={this.handlePostChange} data2={this.state.value}  />
+      return <ImagePostModal data={this.createPost} data1={this.handlePostChange} data2={this.state.value} />
 
     } else if (this.state.postType === "video") {
 
@@ -62,7 +62,7 @@ class PostModal extends Component {
   }
 
   render() {
-    return  <ModalGeneric data={this.renderPostForm()} /> 
+    return <ModalGeneric data={this.renderPostForm()} />
   }
 }
 export default PostModal

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import './SinglePost.css'
-import { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl, TYPES } from "./../../shares/constans"
+import { url, textUrlGet, imageUrlSingle, videoUrlSingle, commentPost, textUrlSingle, commentUrl, usersUrl, TYPES } from "./../../shares/constans"
 import { postService } from "./../../service/postService";
 import Comment from "./../postFeed/Comment";
 import PostContent from './../postFeed/PostContent';
