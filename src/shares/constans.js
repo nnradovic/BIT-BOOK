@@ -12,6 +12,7 @@ const textUrlSingle = 'api/TextPosts/'
 const commentUrl = 'api/Comments?postId='
 const commentPost = 'api/Comments'
 const usersUrl = 'api/users?postId='
+const commentPost = 'api/Comments'
 const TYPES = {
     VIDEO: "video",
     TEXT: "text",

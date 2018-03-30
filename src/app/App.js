@@ -12,7 +12,7 @@ import TextView from "./postFeed/TextView";
 
 import './App.css';
 import SinglePost from './singlePost/SinglePost';
-// /post/text/234
+
 class App extends Component {
   render() {
     return (
