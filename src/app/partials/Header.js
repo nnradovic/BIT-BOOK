@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 const Header = () => {
     return (
         <div className="container-fluid">
@@ -12,13 +13,13 @@ const Header = () => {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ">
                                 <li className="nav-item active">
-                                    <a className="nav-link text-white navMenu" href="#"> <i className="ion-arrow-graph-up-right"></i> Feed </a>
+                                    <a className="nav-link text-white navMenu" href=""> <i className="ion-arrow-graph-up-right"></i> Feed </a>
                                 </li>
+                               <Link to="/people"> <li className="nav-item">
+                                    <span className="nav-link text-white navMenu" href=""> <i className="ion-ios-pulse-strong"></i> People</span> 
+                                </li></Link>
                                 <li className="nav-item">
-                                    <a className="nav-link text-white navMenu" href="#"> <i className="ion-ios-pulse-strong"></i> People</a> 
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link text-white navMenu" href="#"><i className="ion-android-person"></i>  Profile</a>
+                                    <a className="nav-link text-white navMenu" href=""><i className="ion-android-person"></i>  Profile</a>
                                 </li>
                             </ul>
                         </div>

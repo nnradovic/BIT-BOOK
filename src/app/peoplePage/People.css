@@ -1,0 +1,19 @@
+*{
+    box-sizing:border-box
+}
+.card {
+    padding:30px;
+    margin:10px;
+}
+.card-img-top {
+    width:150px;
+    padding:5px;
+}
+.card-title {
+    color:black;
+    font-size:22px;
+}
+.card-text {
+    color:black;
+    font-size:18px;
+}

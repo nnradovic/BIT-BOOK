@@ -4,6 +4,7 @@ import PostPage from "./postFeed/PostPage";
 import Header from './partials/Header'
 import Footer from './partials/Footer'
 import ImageView from "./postFeed/ImageView";
+import MainPage from "./peoplePage/MainPage"
 // import ImageViewSingle from "./postFeed/ImageViewSingle";
 import VideoView from "./postFeed/VideoView";
 // import VideoViewSingle from "./postFeed/VideoViewSingle";
@@ -19,8 +20,9 @@ class App extends Component {
       <Fragment>
         <Header />
         <Switch >
-          <Route path="/post/:type/:id" component={SinglePost} />
-          <Route path="/" component={PostPage} />
+          <Route exact path="/post/:type/:id" component={SinglePost} />
+          <Route exact path="/" component={PostPage} />
+          <Route exact path='/people' component={MainPage} />
         </Switch >
         <Footer />
       </Fragment>
