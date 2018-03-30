@@ -1,9 +1,9 @@
 .pad{
     padding: 20px;
-    background-color: #96858F;
+    background-color: #25415A;
     color:#F4F4F4;
-    border:2px solid black; 
-
+    border:2px solid #D3D9DE;
+  
 }
 iframe{
     border:2px solid#fff; 
@@ -19,4 +19,8 @@ iframe{
 .comment{
     display: inline;
     float: right;
+}
+.textBoot{
+    font-size: 25px;
+    font-weight: 600;
 }

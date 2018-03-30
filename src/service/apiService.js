@@ -7,7 +7,11 @@ const myFetchGet = (url) => {
         }
     }
 
-    return fetch(url, requestOpt).then(response => response.json());
+    return fetch(url, requestOpt).then(response => {
+
+        return response.json()
+
+    });
 }
 
 export default myFetchGet; 

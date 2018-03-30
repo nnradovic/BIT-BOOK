@@ -40,6 +40,13 @@
  
 
 }
+.logo{
+  font-size: 28px;
+  text-transform: lowercase;
+}
+.navMenu{
+  font-size: 20px;
+}
 .nav-item:nth-child(2){
   padding-right: 10px;
   padding-left:10px;
@@ -51,7 +58,7 @@
  }
 
 .container-fluid{
-  background:#6d7993;
+  background:#102E4A;
 }
  /*sticky footer*/
  html {
@@ -66,9 +73,10 @@
     width: 100%;
     position: absolute;
     height: 60px;
-    background-color:#6d7993;
+    background-color:#102E4A;
   }
     .footer-block {
-      margin: 10px 0;
+      margin-bottom: 10px;
+      font-size: 20px;
     }
   

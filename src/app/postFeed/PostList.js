@@ -3,7 +3,9 @@ import VideoView from "./VideoView";
 import TextView from "./TextView";
 import ImageView from "./ImageView";
 import { postService } from "./../../service/postService";
-import { url, textUrlGet } from "./../../shares/constans"
+import { url, textUrlGet } from "./../../shares/constans";
+import PostItem from "./PostItem";
+
 class PostList extends React.Component {
     constructor(props) {
         super(props);
@@ -11,15 +13,16 @@ class PostList extends React.Component {
             posts: []
         }
     }
+
     componentDidMount() {
         postService.getPosts(`${url}${textUrlGet}`)
             .then(postList => {
-                console.log(postList);
                 this.setState({
                     posts: postList
                 })
             })
     }
+
 
     render() {
         const posts = this.state.posts;
@@ -30,13 +33,7 @@ class PostList extends React.Component {
                         <div className="col-8 offset-2">
 
                             {posts.map(post => {
-                                if (post.type === 'Video') {
-                                    return <VideoView key={post.id} data={post} />
-                                } else if (post.type === 'Image') {
-                                    return <ImageView key={post.id} data={post} />
-                                } else {
-                                    return <TextView key={post.id} data={post} />
-                                }
+                                return <PostItem post={post} key={post.id} />
                             })}
 
                         </div >

@@ -4,7 +4,7 @@ class Post {
         this.dateCreated = new Date(post.dateCreated);
         this.userId = post.userId;
         this.userDisplayName = post.userDisplayName;
-        this.type = post.type.charAt(0).toUpperCase() + post.type.slice(1);
+        this.type = post.type;
         this.commentsNum = post.commentsNum;
     }
     getDatum() {
