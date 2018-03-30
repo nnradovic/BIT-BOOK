@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import './SinglePost.css'
-import { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl } from "./../../shares/constans"
+import { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl, TYPES } from "./../../shares/constans"
 import { postService } from "./../../service/postService";
 import Comment from "./../postFeed/Comment";
 import PostContent from './../postFeed/PostContent';
@@ -8,19 +8,21 @@ import PostContent from './../postFeed/PostContent';
 
 class SinglePost extends React.Component {
     constructor(props) {
+
         super(props)
         this.state = {
             postItem: '',
             comments: [],
 
         }
-        console.log(props);
+
 
     }
 
 
     componentDidMount() {
-        if (this.props.match.params.type === "video") {
+        if (this.props.match.params.type === TYPES.VIDEO) {
+
             //VIDEO
             postService.getSingleVideoPosts(`${url}${videoUrlSingle}${this.props.match.params.id}`)
                 .then(video => {
@@ -30,7 +32,8 @@ class SinglePost extends React.Component {
                     })
 
                 })
-        } else if (this.props.match.params.type === "text") {
+
+        } else if (this.props.match.params.type === TYPES.TEXT) {
             // TEXT
             postService.getSingleTextPosts(`${url}${textUrlSingle}${this.props.match.params.id}`)
                 .then(text => {
@@ -53,7 +56,7 @@ class SinglePost extends React.Component {
         //ALL
         postService.getComments(`${url}${commentUrl}${this.props.match.params.id}`)
             .then(comments => {
-                console.log(comments);
+
                 this.setState({
                     comments: comments
                 })
@@ -73,7 +76,7 @@ class SinglePost extends React.Component {
                         <div className="col-8 offset-2">
                             <div className="card text">
                                 <div className="card-body">
-                                    <PostContent post={this.state.postItem} />
+                                    <PostContent post={this.state.postItem} key={this.state.postItem.id} />
                                 </div>
                             </div>
                             <div className="input-group mb-3">

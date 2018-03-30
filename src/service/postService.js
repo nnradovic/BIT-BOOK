@@ -12,6 +12,7 @@ class PostService {
             .then(posts => {
                 return posts.map((post) => {
 
+
                     if (post.type === 'image') {
                         return new Image(post)
                     } else if (post.type === 'video') {

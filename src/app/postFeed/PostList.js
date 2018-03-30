@@ -17,7 +17,6 @@ class PostList extends React.Component {
     componentDidMount() {
         postService.getPosts(`${url}${textUrlGet}`)
             .then(postList => {
-
                 this.setState({
                     posts: postList
                 })
@@ -34,7 +33,7 @@ class PostList extends React.Component {
                         <div className="col-8 offset-2">
 
                             {posts.map(post => {
-                                return <PostItem post={post} />
+                                return <PostItem post={post} key={post.id} />
                             })}
 
                         </div >

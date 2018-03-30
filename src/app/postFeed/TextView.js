@@ -6,7 +6,7 @@ import PostInfo from './PostInfo';
 
 const TextView = (props) => {
 
-    console.log(props);
+
 
 
     return (

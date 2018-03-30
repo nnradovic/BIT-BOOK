@@ -6,17 +6,18 @@ import TextView from "./TextView";
 import ImageView from "./ImageView";
 import PostContent from './PostContent'
 import { postService } from "./../../service/postService";
-import { url, textUrlGet } from "./../../shares/constans";
+import { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl } from "./../../shares/constans";
 import PostInfo from './PostInfo';
 
 const PostItem = (props) => {
+    const { post } = props;
     return (
-        <Link to={`/post/text/${props.post.id}`}>
+        <Link to={`/post/${post.type}/${post.id}`}>
             <div className="card text">
                 <div className="card-body">
-                    <PostContent post={props.post} />
+                    <PostContent post={post} />
                     <div className="card-body">
-                        <PostInfo post={props.post} />
+                        <PostInfo post={post} />
                     </div>
                 </div>
             </div>

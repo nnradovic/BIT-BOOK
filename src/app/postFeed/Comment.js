@@ -4,7 +4,6 @@ import { postService } from "./../../service/postService";
 import { url, textUrlGet, textUrlSingle, commentUrl, usersUrl } from "./../../shares/constans"
 class Comment extends React.Component {
     constructor(props) {
-        console.log(props);
 
         super(props)
         this.state = {
@@ -17,7 +16,7 @@ class Comment extends React.Component {
     componentDidMount() {
         postService.getUsers(`${url}${usersUrl}${this.props.data.authorId}`)
             .then(users => {
-                console.log(users);
+
                 this.setState({
                     user: users[0]
                 })

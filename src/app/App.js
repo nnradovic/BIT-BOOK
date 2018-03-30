@@ -20,9 +20,7 @@ class App extends Component {
         <Header />
         <Switch >
           <Route path="/post/:type/:id" component={SinglePost} />
-
           <Route path="/" component={PostPage} />
-
         </Switch >
         <Footer />
       </Fragment>
