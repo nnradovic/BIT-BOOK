@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box
+}
+
+.nav-search{
+   
+    margin-top:10px;
+}
+.card {
+    margin-top:10px;
+}
+.card-img-top {
+    width:150px;
+    padding:5px;
+}
+.card-title {
+    color:black;
+    font-size:22px;
+}
+.card-text {
+    color:black;
+    font-size:18px;
+}
