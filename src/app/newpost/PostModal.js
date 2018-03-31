@@ -36,7 +36,7 @@ class PostModal extends Component {
    addNewPost.postNewPost(this.state.value, this.state.postType)
    .then((response) => {
     this.props.getPosts();
-    this.clearInputs();
+    // this.clearInputs();
   })
   .catch((error) => console.info(error))
   }

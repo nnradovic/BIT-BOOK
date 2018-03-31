@@ -5,7 +5,12 @@ class TextPostModal extends Component {
   constructor(props){
     super(props)
   }
-
+  // clearInputs = () => {
+  //   this.props.data();
+  //   console.log(this.refs.fieldName.value);
+  //   this.refs.fieldName.value = ""
+  //   console.log(this.refs.fieldName.value);
+  //    }
 
 
   render(){
@@ -14,7 +19,7 @@ class TextPostModal extends Component {
         <p>post content</p>
         <input type="text" onChange={this.props.data1} className="form-control" id="exampleInputText" placeholder="Enter your text post" aria-describedby="textHelp" />
         <div className="modal-footer">
-          <button type="button" onClick={this.props.data} ref="fieldName" value={this.props.data2} data-dismiss="modal" className="btn btn-primary">POST</button>
+          <button type="button" onClick={ this.props.data} ref="fieldName" value={this.props.data2} data-dismiss="modal" className="btn btn-primary">POST</button>
         </div>
       </div>
     )
