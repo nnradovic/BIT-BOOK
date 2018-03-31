@@ -15,11 +15,11 @@ const Header = () => {
                                 <a className="nav-link text-white navMenu" href="#"> <i className="ion-arrow-graph-up-right"></i> Feed </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-white navMenu" href="#"> <i className="ion-ios-pulse-strong"></i> People</a>
+                                <span className="nav-link text-white navMenu" href="#"> <i className="ion-ios-pulse-strong"></i> People</span>
                             </li>
                             <Link to="/profile" >
                                 <li className="nav-item">
-                                    <a className="nav-link text-white navMenu" ><i className="ion-android-person"></i> Profile</a>
+                                    <span className="nav-link text-white navMenu" ><i className="ion-android-person"></i> Profile</span>
                                 </li>
                             </Link>
                         </ul>

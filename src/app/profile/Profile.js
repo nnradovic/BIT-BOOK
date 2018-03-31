@@ -26,7 +26,7 @@ class Profile extends Component {
     }
 
     noImage = () => {
-        if (this.state.profile.avatarUrl === undefined) {
+        if (this.state.profile.avatarUrl === '') {
             return (
 
                 <img className="profileImg" src="https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-hacker-3830b32ad9e0802c-512x512.png" alt="" />
@@ -45,8 +45,8 @@ class Profile extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-10 offset-1">
-                        <img className="profileImg" src={profile.avatarUrl} alt="" />
-                        {/* {this.noImage()} */}
+                        {/* <img className="profileImg" src={profile.avatarUrl} alt="" /> */}
+                        {this.noImage()}
                         <h1 className="profileName">{profile.name}</h1>
                         <p className="profileDes">{profile.aboutShort}</p>
                         <div className="row">
