@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 const Header = () => {
+
     return (
         <div className="container-fluid">
             {/* <div className="container"> */}
@@ -18,15 +19,18 @@ const Header = () => {
                                <Link to="/people"> <li className="nav-item">
                                     <span className="nav-link text-white navMenu" href=""> <i className="ion-ios-pulse-strong"></i> People</span> 
                                 </li></Link>
+                                <Link to="/profile" >
                                 <li className="nav-item">
-                                    <a className="nav-link text-white navMenu" href=""><i className="ion-android-person"></i>  Profile</a>
+                                    <a className="nav-link text-white navMenu" ><i className="ion-android-person"></i> Profile</a>
                                 </li>
+                            </Link>
+                           
                             </ul>
-                        </div>
-                    </div>
-                </nav>
-            {/* </div > */}
-        </div>
-    )
+                            </div>
+                            </div>
+                            </nav>
+                            </div>
+                            )
+
 }
 export default Header;
