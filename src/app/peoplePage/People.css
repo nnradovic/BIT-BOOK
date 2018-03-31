@@ -13,11 +13,14 @@
     width:150px;
     padding:5px;
 }
-.card-title {
+.people {
     color:black;
     font-size:22px;
 }
-.card-text {
+.people {
     color:black;
     font-size:18px;
+}
+.profileImg{
+    width:300px;
 }

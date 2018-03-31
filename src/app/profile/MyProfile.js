@@ -3,30 +3,24 @@ import "./Profile.css";
 import { postService } from './../../service/postService';
 import { url, textUrlGet, textUrlSingle, commentUrl, usersUrl, singleProfile } from "./../../shares/constans"
 
-class Profile extends Component {
+class MyProfile extends Component {
     constructor(props) {
         super(props);
         console.log(props.match.params);
         this.state = {
-            profile: '',
-            user:null
+            profile: ''
+           
         }
     }
 
     componentDidMount() {
-        postService.getProfile(`${url}/api/users/${this.props.match.params.id}`)
+        postService.getProfile(`${url}/api/profile`)
             .then(profile => {
                 this.setState({
                  profile: profile
                 })
-                
-
             })
-
-
-
-
-    }
+        }
 
     noImage = () => {
         if (this.state.profile.avatarUrl === undefined) {
@@ -37,7 +31,6 @@ class Profile extends Component {
         } else {
             return <img className="profileImg" src={this.state.profile.avatarUrl} alt="" />
         }
-
     }
 
     render() {
@@ -56,6 +49,7 @@ class Profile extends Component {
                             <div className="col-6 offset-3">
                                 <button type="button " className="btn btn-outline-secondary btnOne"><i className="ion-android-clipboard"></i> {profile.postsCount} Posts</button>
                                 <button type="button" className="btn btn-outline-secondary  btnTwo"><i className="ion-ios-compose-outline"></i>{profile.commentsCount} Comments</button>
+                                <button type="button " className="btn btn-outline-secondary btnThree"> Edit Profile</button>
                             </div>
                         </div>
                     </div>
@@ -65,4 +59,4 @@ class Profile extends Component {
     }
 }
 
-export default Profile;
+export default MyProfile;

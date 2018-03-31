@@ -29,3 +29,10 @@
     border:2px solid white;
     border-radius: 50px;
 }
+.btnThree {
+    position:absolute;
+    top:10%;
+    right:35%;
+    border:2px solid white;
+    border-radius: 50px;
+}

@@ -80,45 +80,7 @@
       font-size: 20px;
     }
 
-    /*buttons*/
-/* 
-    .btn-all{
-    width: 50px;
-     height: 50px;
-     text-align: center;
-     padding: 6px 0;
-     font-size: 12px;
-     line-height: 1.42;
-     border-radius: 25px;
-   }
-    .btn4{
-      position:fixed;
-      bottom:7%;
-      right: 5%;
-      color: white;
-      font-size: 30px;
-      line-height: 70%;
-      border:none;
-    }
-
-    .btn1{
-      position:fixed;
-      bottom:14%;
-      right: 5%;
-      border: none;
-    }
-    .btn2{
-      position:fixed;
-      bottom:21%;
-      right: 5%;
-      border: none;
-    }
-    .btn3{
-      position:fixed;
-      bottom:28%;
-      right: 5%;
-      border:none;
-    } */
+  
 
  .modal-dialog{
    position:fixed;
