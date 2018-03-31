@@ -14,7 +14,7 @@ class SinglePost extends React.Component {
         this.state = {
             postItem: '',
             comments: [],
-            newComment: ""
+            newComment: "",
 
         }
 
@@ -72,6 +72,8 @@ class SinglePost extends React.Component {
                     newComment: ""
                 })
             })
+
+
     }
 
     handleChange = (e) => {

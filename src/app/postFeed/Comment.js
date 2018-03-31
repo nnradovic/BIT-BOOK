@@ -1,13 +1,14 @@
 import React from "react";
 import "./Comment.css";
 import { postService } from "./../../service/postService";
-import { url, textUrlGet, textUrlSingle, commentUrl, usersUrl } from "./../../shares/constans"
+import { url, textUrlGet, textUrlSingle, commentUrl, usersUrl, singleProfile } from "./../../shares/constans"
 class Comment extends React.Component {
     constructor(props) {
 
         super(props)
         this.state = {
             user: [],
+            profile: []
 
         }
     }
@@ -21,9 +22,19 @@ class Comment extends React.Component {
                     user: users[0]
                 })
             })
+        postService.getProfile(`${url}${singleProfile}`)
+            .then(profile => {
+                this.setState({
+                    profile: profile
+                })
+
+            })
     }
 
     render() {
+        console.log(this.state.user);
+
+
         return (
             <div className="card comm" >
                 <div className="card-body">
@@ -34,7 +45,7 @@ class Comment extends React.Component {
 
                     <p className="card-text comText">{this.props.data.body}</p>
                 </div>
-                <h5 className="card-title comN">{this.props.data.authorName}</h5>
+                <h5 className="card-title comN">{this.state.user.name}</h5>
             </div>
         )
     }
