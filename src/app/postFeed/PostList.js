@@ -15,7 +15,7 @@ class PostList extends React.Component {
         super(props);
         this.state = {
             btn: "",
-            posts:[]
+            posts: []
         }
     }
 
@@ -29,6 +29,10 @@ class PostList extends React.Component {
 
 
     componentDidMount() {
+        this.fetchPosts()
+    }
+
+    fetchPosts = () => {
         postService.getPosts(`${url}${textUrlGet}`)
             .then(postList => {
                 this.setState({
@@ -40,11 +44,11 @@ class PostList extends React.Component {
 
     getPostsAgain = () => {
         postService.getPosts(`${url}${textUrlGet}`)
-        .then(postList => {
-            this.setState({
-                posts: postList
+            .then(postList => {
+                this.setState({
+                    posts: postList
+                })
             })
-        })
     }
 
     onCreatePostClick = (type)=>{
@@ -66,7 +70,7 @@ class PostList extends React.Component {
                             <PostModal data={this.state.btn} getPosts={this.getPostsAgain} />
 
                             {posts.map(post => {
-                                return <PostItem post={post} key={post.id} />
+                                return <PostItem onPostDelete={this.fetchPosts} post={post} key={post.id} />
                             })}
 
                         </div >

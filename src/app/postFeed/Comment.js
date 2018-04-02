@@ -1,7 +1,7 @@
 import React from "react";
 import "./Comment.css";
 import { postService } from "./../../service/postService";
-import { url, textUrlGet, textUrlSingle, commentUrl, usersUrl, singleProfile } from "./../../shares/constans"
+import { url, textUrlGet, textUrlSingle, commentUrl, usersUrl } from "./../../shares/constans"
 class Comment extends React.Component {
     constructor(props) {
 
@@ -22,13 +22,7 @@ class Comment extends React.Component {
                     user: users[0]
                 })
             })
-        postService.getProfile(`${url}${singleProfile}`)
-            .then(profile => {
-                this.setState({
-                    profile: profile
-                })
 
-            })
     }
 
     render() {

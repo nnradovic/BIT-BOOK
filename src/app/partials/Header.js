@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 const Header = () => {
 
     return (
@@ -24,13 +24,13 @@ const Header = () => {
                                     <span className="nav-link text-white navMenu" ><i className="ion-android-person"></i> Profile</span>
                                 </li>
                             </Link>
-                           
-                            </ul>
-                            </div>
-                            </div>
-                            </nav>
-                            </div>
-                            )
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    )
 
 }
 export default Header;
