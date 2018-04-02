@@ -72,14 +72,14 @@ class PostList extends React.Component {
         return (
             <Fragment>
 
-
-                <select onChange={this.handlePostChange} value={this.state.value} >
-
-                    <option value="" >Option</option>
-                    <option value="video" >*Videos</option>
-                    <option value="image"  >*Image</option>
-                    <option value="text"  >*Text</option>
-                </select>
+                <div className="dropDownRight">
+                    <select onChange={this.handlePostChange} value={this.state.value} className="btnDrop">
+                        <option value="" >Option</option>
+                        <option value="video" >*Videos</option>
+                        <option value="image"  >*Image</option>
+                        <option value="text"  >*Text</option>
+                    </select>
+                </div>
 
 
 

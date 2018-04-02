@@ -141,8 +141,12 @@ class SinglePost extends React.Component {
                         <div className="col-8 offset-2">
                             <div className="card text">
                                 <div className="card-body">
-                                    <button type="button " className="btn btn-outline-secondary btnOne " onClick={this.deletePost}>Delete</button>
-                                    <PostContent post={this.state.postItem} key={this.state.postItem.id} />
+                                    <div className="divDelete">
+                                        <button type="button " className="btn btn-outline-secondary btnDelete " onClick={this.deletePost}>Delete</button>
+                                    </div>
+                                    <div className="postan">
+                                        <PostContent post={this.state.postItem} key={this.state.postItem.id} />
+                                    </div>
                                 </div>
                             </div>
 

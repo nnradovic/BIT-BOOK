@@ -77,3 +77,15 @@ iframe{
     font-size: 25px;
     font-weight: 600;
 }
+.divDelete{
+    padding: 20px;
+}
+
+.btnDelete{
+    float: right;
+    border: 2px solid #fff;
+    margin-bottom: 20px; 
+}
+.postan{
+    padding: 20px;
+}

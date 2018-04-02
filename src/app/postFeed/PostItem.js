@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-
+import "./PostList.css";
 import VideoView from "./VideoView";
 import TextView from "./TextView";
 import ImageView from "./ImageView";
@@ -38,9 +38,13 @@ class PostItem extends React.Component {
             <Link to={`/post/${this.props.post.type}/${this.props.post.id}`}>
                 <div className="card text">
                     <div className="card-body">
-                        <button type="button " className="btn btn-outline-secondary btnOne " onClick={this.deletePost}><i className="ion-android-delete"></i> Delete</button>
-                        <PostContent post={this.props.post} />
-                        <div className="card-body">
+                        <div className="btnDeleteDiv">
+                            <button type="button " className="btn btn-outline-secondary  btnDelete" onClick={this.deletePost}><i className="ion-android-delete"></i> Delete</button>
+                        </div>
+                        <div className="postContent">
+                            <PostContent post={this.props.post} />
+                        </div>
+                        <div className="card-body postInfo">
                             <PostInfo post={this.props.post} />
                         </div>
                     </div>
