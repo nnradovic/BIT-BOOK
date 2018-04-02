@@ -10,6 +10,7 @@ import VideoView from "./postFeed/VideoView";
 import TextView from "./postFeed/TextView";
 import './App.css';
 import SinglePost from './singlePost/SinglePost';
+import MyProfile from './profile/MyProfile';
 import Profile from './profile/Profile';
 
 class App extends Component {
@@ -23,7 +24,7 @@ class App extends Component {
           <Route exact path='/people' component={MainPage} />
           <Route path="/post/:type/:id" component={SinglePost} />
           <Route path="/profile/:id" component={Profile} />
-          <Route path="/profile" component={Profile} />
+          <Route path="/profile" component={MyProfile} />
           <Route path="/" component={PostPage} />
         </Switch >
         <Footer />
