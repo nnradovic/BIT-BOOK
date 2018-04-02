@@ -1,6 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
-// import {validImageUrl} from '../../shares/constans'
+import Utils from "../../shares/utils"
 
 class ImagePostModal extends Component {
   constructor(props) {
@@ -23,16 +23,7 @@ class ImagePostModal extends Component {
   }
 
   checkImageUrl = () => {
-    const input = this.state.value;
-    const lastDot = input.lastIndexOf(".");
-    const inputLength = input.length
-    const inputEnd = input.substring(lastDot, inputLength)
-
-    if (inputEnd === ".jpg" || inputEnd === ".jpeg" || inputEnd === ".png" || inputEnd === ".svg" || inputEnd === ".gif") {
-      return (<button type="button" onClick={this.props.data} value={this.props.data2} data-dismiss="modal" className="btn btn-primary">POST</button>)
-    } else {
-      return (<button type="button" disabled  data-dismiss="modal" className="btn btn-primary">POST</button>)
-    }
+   return Utils.checkImageUrl(this.state.value, this.props.data, this.props.data2)
   }
   
   render() {
