@@ -9,10 +9,8 @@ class PostService {
     getPosts = (url) => {
 
         return myFetchGet(url)
-
             .then(posts => {
                 return posts.map((post) => {
-
 
                     if (post.type === 'image') {
                         return new Image(post)
@@ -63,12 +61,11 @@ class PostService {
                 })
             })
     }
-  
-    
+
+
     getProfile = (url) => {
         return myFetchGet(url)
             .then(profile => {
-
                 return new Profile(profile)
 
             })

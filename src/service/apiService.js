@@ -8,9 +8,10 @@ const myFetchGet = (url) => {
     }
 
     return fetch(url, requestOpt).then(response => {
-
+        if (response.status === 404) {
+            // Promise.reject(new Error("Not found!!!!!!!!!!!!!!!!"))
+        };
         return response.json()
-
     });
 }
 

@@ -61,9 +61,9 @@ class PostList extends React.Component {
     handlePostChange = (event) => {
         this.setState({ value: event.target.value })
         console.log(event.target.value);
-        onCreatePostClick = (type) => {
-            this.setState({ btn: type })
-        }
+    }
+    onCreatePostClick = (type) => {
+        this.setState({ btn: type })
 
 
     }
