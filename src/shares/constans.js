@@ -13,7 +13,7 @@ const commentUrl = 'api/Comments?postId='
 const commentPost = 'api/Comments'
 const usersUrl = 'api/users?postId='
 const singleProfile = '/api/profile'
-
+const deletePost = 'api/Posts/'
 const TYPES = {
     VIDEO: "video",
     TEXT: "text",
@@ -21,4 +21,5 @@ const TYPES = {
 }
 
 
-export { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentPost, commentUrl, usersUrl, TYPES, newTextPostUrl, newImagePostUrl, newVideoPostUrl, validYoutube, validImageUrl, singleProfile }
+
+export { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl, TYPES, newTextPostUrl, newImagePostUrl, newVideoPostUrl, validYoutube, validImageUrl, deletePost, commentPost }
