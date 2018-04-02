@@ -35,7 +35,7 @@ class PostItem extends React.Component {
     render() {
 
         return (
-            <Link to={`/post/${this.props.post.type}${this.props.post.id}`}>
+            <Link to={`/post/${this.props.post.type}/${this.props.post.id}`}>
                 <div className="card text">
                     <div className="card-body">
                         <button type="button " className="btn btn-outline-secondary btnOne " onClick={this.deletePost}><i className="ion-android-delete"></i> Delete</button>

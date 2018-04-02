@@ -98,6 +98,26 @@ class SinglePost extends React.Component {
     }
 
 
+    deletePost = (e) => {
+        e.preventDefault()
+
+        return fetch(`http://bitbookapi.azurewebsites.net/api/Posts/${this.props.match.params.id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Key": "bitbook",
+                "SessionId": "7A5D8FF8-B04D-4C8C-9812-8B44EB7E4C94"
+            }
+        }).then(() => {
+
+            this.props.history.push('/post');
+            // window.location.href = "#/posts";
+        }
+        )
+
+    }
+
+
 
     btnDisabled = () => {
         if (this.state.newComment === "") {
@@ -121,6 +141,7 @@ class SinglePost extends React.Component {
                         <div className="col-8 offset-2">
                             <div className="card text">
                                 <div className="card-body">
+                                    <button type="button " className="btn btn-outline-secondary btnOne " onClick={this.deletePost}>Delete</button>
                                     <PostContent post={this.state.postItem} key={this.state.postItem.id} />
                                 </div>
                             </div>
