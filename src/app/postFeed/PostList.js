@@ -15,7 +15,8 @@ class PostList extends React.Component {
         super(props);
         this.state = {
             btn: "",
-            posts: []
+            posts: [],
+            value: ""
         }
     }
 
@@ -50,17 +51,38 @@ class PostList extends React.Component {
                 })
             })
     }
+    getType = () => {
+        this.setState({
+            type: this.state.type
+        })
+        console.log('111');
 
-    // getDataFromButton = (dataFromButton)=>{
-    //     this.setState({btnType:dataFromButton})
-    // }
+    }
+    handlePostChange = (event) => {
+        this.setState({ value: event.target.value })
+        console.log(event.target.value);
 
-
+    }
 
     render() {
         const posts = this.state.posts;
+        let filterPost = posts.filter((postType) => { return postType.type.indexOf(this.state.value) !== -1 })
+        console.log(filterPost);
+
         return (
             <Fragment>
+
+
+                <select onChange={this.handlePostChange} value={this.state.value} >
+
+                    <option value="" >Option</option>
+                    <option value="video" >*Videos</option>
+                    <option value="image"  >*Image</option>
+                    <option value="text"  >*Text</option>
+                </select>
+
+
+
                 <div className="container">
                     <div className="row">
                         <div className="col-10 offset-1">
@@ -82,13 +104,15 @@ class PostList extends React.Component {
                                 </a>
                             </div>
 
-                            {/* <Button callBackFromParent={this.getDataFromButton}/> */}
 
                             <PostModal data={this.state.btn} getPosts={this.getPostsAgain} />
-
-                            {posts.map(post => {
-                                return <PostItem onPostDelete={this.fetchPosts} post={post} key={post.id} />
-                            })}
+                            {
+                                (this.state.value === '') ? posts.map(post => {
+                                    return <PostItem onPostDelete={this.fetchPosts} post={post} key={post.id} />
+                                }) : filterPost.map(singlePost => {
+                                    return <PostItem onPostDelete={this.fetchPosts} post={singlePost} key={singlePost.id} />
+                                })
+                            }
 
                         </div >
                     </div >
