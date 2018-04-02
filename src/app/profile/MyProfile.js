@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import "./Profile.css";
 import { postService } from './../../service/postService';
+import EditProfile from './EditProfile'
+import Modal from './Modal'
 import { url, textUrlGet, textUrlSingle, commentUrl, usersUrl, singleProfile } from "./../../shares/constans"
 
 class MyProfile extends Component {
@@ -8,13 +10,24 @@ class MyProfile extends Component {
         super(props);
         console.log(props.match.params);
         this.state = {
-            profile: ''
+            profile: '',
+            
+            
+            
            
         }
     }
 
     componentDidMount() {
         postService.getProfile(`${url}/api/profile`)
+            .then(profile => {
+                this.setState({
+                 profile: profile
+                })
+            })
+        }
+        getEditedProfile = () =>{
+            postService.getProfile(`${url}/api/profile`)
             .then(profile => {
                 this.setState({
                  profile: profile
@@ -32,6 +45,8 @@ class MyProfile extends Component {
             return <img className="profileImg" src={this.state.profile.avatarUrl} alt="" />
         }
     }
+    
+  
 
     render() {
         const profile = this.state.profile;
@@ -44,12 +59,14 @@ class MyProfile extends Component {
                         <img className="profileImg" src={profile.avatarUrl} alt="" />
                         {/* {this.noImage()} */}
                         <h1 className="profileName">{profile.name}</h1>
+                        <p className="text-center edit"  data-toggle="modal" data-target="#exampleModal">Edit profile</p>
+                        <Modal data={profile} data1={this.getEditedProfile}/>
                         <p className="profileDes">{profile.aboutShort}</p>
                         <div className="row">
                             <div className="col-6 offset-3">
                                 <button type="button " className="btn btn-outline-secondary btnOne"><i className="ion-android-clipboard"></i> {profile.postsCount} Posts</button>
                                 <button type="button" className="btn btn-outline-secondary  btnTwo"><i className="ion-ios-compose-outline"></i>{profile.commentsCount} Comments</button>
-                                <button type="button " className="btn btn-outline-secondary btnThree"> Edit Profile</button>
+                                
                             </div>
                         </div>
                     </div>

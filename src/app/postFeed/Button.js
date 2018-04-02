@@ -1,8 +1,8 @@
 import "./PostList.css";
-import React from 'react'
+import React, { Component } from 'react'
 
 
-class Button extends React.Component {
+class Button extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,27 +12,15 @@ class Button extends React.Component {
     }
 
     handleState = (event) => {
+        const type = event.target.id;
+
         this.setState({
-            btn: event.target.id
+            btn: type
         })
-        this.props.callBackFromParent(this.state.btn)
+
+        this.props.onCreatePost(type)
     }
-    //  newPromise = () => {
-    //   new Promise((resolve,reject)=>{
-    //    const setState = (event) => {
-    //        return this.setState({
-    //           btn: event.target.id
-    //         })
-    //        }
-    //        resolve(setState)
-    //        .then((response) => { this.props.callBackFromParent(response)
-    //        })
-    //     })
-    //  }
-
-
-
-
+    
     render(){
         return(
             <div className="menu pmd-floating-action" role="navigation">

@@ -13,15 +13,15 @@ const Header = () => {
                     <div className="float-right">
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ">
-                                <li className="nav-item active">
-                                    <a className="nav-link text-white navMenu" href=""> <i className="ion-arrow-graph-up-right"></i> Feed </a>
-                                </li>
+                               <Link to="/"> <li className="nav-item active">
+                                    <span className="nav-link text-white navMenu" href=""> <i className="ion-arrow-graph-up-right"></i> Feed </span>
+                                </li></Link>
                                <Link to="/people"> <li className="nav-item">
                                     <span className="nav-link text-white navMenu" href=""> <i className="ion-ios-pulse-strong"></i> People</span> 
                                 </li></Link>
                                 <Link to="/profile" >
                                 <li className="nav-item">
-                                    <a className="nav-link text-white navMenu" ><i className="ion-android-person"></i> Profile</a>
+                                    <span className="nav-link text-white navMenu" ><i className="ion-android-person"></i> Profile</span>
                                 </li>
                             </Link>
                            
