@@ -28,7 +28,7 @@ class MainPage extends Component {
     }
 
     onSearchValueChange = (searchValue) => {
-        this.setState({ searchValue: searchValue })
+        this.setState({ searchValue: searchValue.toLowerCase() })
     }
 
     getUsers = () => {

@@ -1,8 +1,8 @@
 import "./PostList.css";
-import React from 'react'
+import React, { Component } from 'react'
 
 
-class Button extends React.Component {
+class Button extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,17 +12,17 @@ class Button extends React.Component {
     }
 
     handleState = (event) => {
+        const type = event.target.id;
+
         this.setState({
-            btn: event.target.id
+            btn: type
         })
-        this.props.callBackFromParent(this.state.btn)
+
+        this.props.onCreatePost(type)
     }
-
-
-
-
-    render() {
-        return (
+    
+    render(){
+        return(
             <div className="menu pmd-floating-action" role="navigation">
 
                 <a onClick={this.handleState} id="post" data-toggle="modal" data-target="#exampleModal" className="btn3 btn-info btn-all pmd-floating-action-btn btn btn-sm pmd-btn-fab pmd-btn-raised pmd-ripple-effect btn-default" data-title="Post">

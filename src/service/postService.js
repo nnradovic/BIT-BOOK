@@ -63,6 +63,8 @@ class PostService {
                 })
             })
     }
+  
+    
     getProfile = (url) => {
         return myFetchGet(url)
             .then(profile => {
@@ -72,7 +74,7 @@ class PostService {
             })
     }
 
-
 }
+
 
 export const postService = new PostService();
