@@ -40,6 +40,9 @@
  
 
 }
+.card-text{
+  color: skyblue;
+}
 .logo{
   font-size: 28px;
   text-transform: lowercase;
