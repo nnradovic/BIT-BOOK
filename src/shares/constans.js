@@ -11,7 +11,7 @@ const videoUrlSingle = 'api/VideoPosts/'
 const textUrlSingle = 'api/TextPosts/'
 const commentUrl = 'api/Comments?postId='
 const commentPost = 'api/Comments'
-const usersUrl = 'api/users?postId='
+const usersUrl = 'api/users'
 const singleProfile = 'http://bitbookapi.azurewebsites.net/api/profiles'
 const deletePost = 'api/Posts/'
 const TYPES = {

@@ -1,9 +1,10 @@
 import React from 'react'
 import { validYoutube } from './constans'
 class Utils {
+    // postDatecheck
     static getPostDate = (lastPostDate) => {
         return `${lastPostDate.getDate()}.${(lastPostDate.getMonth() + 1)}.${lastPostDate.getFullYear()}`;
-    }
+    } 
 
     static getTodayDate = (today) => {
         return `${today.getDate()}.${(today.getMonth() + 1)}.${today.getFullYear()}`;
@@ -19,7 +20,10 @@ class Utils {
         } else {
             return postDate
         }
-    }
+    } 
+
+
+    //youtube validation
 
     static checkUrl = (value, data, data2, validYouTube) => {
         if (value.includes(validYoutube)) {
@@ -35,7 +39,11 @@ class Utils {
             else{
                 return <button type="button" disabled data-dismiss="modal" className="btn btn-primary">POST</button>
             }
-        }
+        } 
+        
+        
+        
+        // img validation 
     
 
     static checkImageUrl = (value, data, data2) => {
@@ -57,29 +65,37 @@ class Utils {
             return <button type="button" disabled data-dismiss="modal" className="btn btn-primary">POST</button>
         }
     }
+
+
+    static validateProfileImage = (value, data) => {
+        const input = value;
+        const lastDot = input.lastIndexOf(".");
+        const inputLength = input.length
+        const inputEnd = input.substring(lastDot, inputLength)
+    
+        if (inputEnd === ".jpg" || inputEnd === ".jpeg" || inputEnd === ".png" || inputEnd === ".svg" || inputEnd === ".gif") {
+           return  <button onClick={data} type="button" data-dismiss="modal" className="btn btn-primary">Save changes</button>
+        }  else {
+            return <button type="button" disabled data-dismiss="modal" className="btn btn-primary">Save changes</button>
+        }
+    }
+
+
+    static validateEmail = (email) => {
+     const re = /\S+@\S+\.\S+/;
+        return re.test(email);
+
+    }
+    static validatePass = (password) => {
+       
+            const re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+            return re.test(password);
+        
+    
+}
 }
 
 
 export default Utils
 
 
-// class User {
-//     constructor() {
-//         this.id = 0;
-//     }
-
-//     static getId() {
-//         return this.id;
-//     }
-
-//     getRandom() {
-//         return 5;
-//     }
-// }
-
-// const u = new User();
-// u.getRandom():
-
-// Math.random();
-
-// User.getId();
