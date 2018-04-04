@@ -1,10 +1,10 @@
 class EditProfile {
 
- edit = (name, description, image, id, about, email) =>{
+ edit = (name, description, image,  about, email) =>{
     const url = "http://bitbookapi.azurewebsites.net/api/Profiles"
     return fetch(url, {
         method: 'PUT',
-        body: JSON.stringify({name:name, aboutShort:description, avatarUrl:image, userId:id, about:about, email:email}),
+        body: JSON.stringify({name:name, aboutShort:description, avatarUrl:image, about:about, email:email}),
         headers: new Headers({
           "Content-Type": "application/json",
           "Key": " 3E09CF9",

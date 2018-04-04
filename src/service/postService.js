@@ -2,7 +2,7 @@ import { Video, Text, Image } from './../entities/Post';
 import { Comment } from './../entities/Comments';
 import { User } from './../entities/User';
 import Profile from './../entities/Profile'
-import myFetchGet from './apiService';
+import {myFetchGet, myFetchPut}from './apiService';
 
 class PostService {
 
@@ -71,6 +71,11 @@ class PostService {
             })
     }
 
+    editProfile = (url,name,description,image,id,about,email) => {
+        return myFetchPut(url,name,description,image,id,about,email)
+        
+    }
+    
 }
 
 

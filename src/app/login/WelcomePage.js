@@ -27,13 +27,13 @@ render(){
             <div className="container">
                 <div className="row">
                         <div className="col-6">
-                            {(this.state.value === 'register-tab')?< WelcomeRegisterText />:  <WelcomeLoginText />}
+                            {(this.state.value === 'login-tab')?< WelcomeLoginText/>:  <  WelcomeRegisterText/>}
                         </div>
                     <div className="col-6">
                        <Buttons onCreatePost={this.onCreatePostClick} />
                         
                         
-                        {(this.state.value === 'register-tab')?<Register />:  <Login />}
+                        {(this.state.value === 'login-tab')?  <Login />:<Register onCreatePost={this.onCreatePostClick} />}
                         </div>
 
 

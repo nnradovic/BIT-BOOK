@@ -9,14 +9,17 @@ export const RootComponent = () => {
         if (!authenticationService.isUserAuthenticated()) {
             return <WelcomePage />
         }
+        else{
+            return <App />
+        }
         
-        return <App />
     }
 
      return (
-         <Switch>
-            
+         
+           <Switch>
            {checkRoute()}
-         </Switch>
+           </Switch>
+         
      )
 };

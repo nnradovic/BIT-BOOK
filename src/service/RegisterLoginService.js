@@ -15,10 +15,10 @@ register = (username,name, email, password) => {
    
        }
 
-login = (username,name, email, password) => {
+login = (username, password) => {
     return fetch(`${url}${login}`, {
         method: 'POST',
-        body: JSON.stringify({username:username, name:name, email:email, password:password }),
+        body: JSON.stringify({username, password }),
         headers: new Headers({
           "Content-Type": "application/json",
           "Key":  "3E09CF9",
