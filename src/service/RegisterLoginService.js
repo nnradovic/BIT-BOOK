@@ -8,7 +8,7 @@ register = (username,name, email, password) => {
              body: JSON.stringify({username:username, name:name, email:email, password:password}),
              headers: new Headers({
                "Content-Type": "application/json",
-               "Key": "bitbook",
+               "Key": "3E09CF9",
                
              })
            })
@@ -21,7 +21,7 @@ login = (username,name, email, password) => {
         body: JSON.stringify({username:username, name:name, email:email, password:password }),
         headers: new Headers({
           "Content-Type": "application/json",
-          "Key": "bitbook",
+          "Key":  "3E09CF9",
           
         })
       })

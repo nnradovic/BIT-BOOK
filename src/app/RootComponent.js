@@ -6,10 +6,10 @@ import {authenticationService} from "../service/RegisterLoginService"
 
 export const RootComponent = () => {
     const checkRoute = () => {
-        if (!authenticationService.isUserAuthenticated) {
-            return <Route  path="/" component={WelcomePage} />
+        if (!authenticationService.isUserAuthenticated()) {
+            return <WelcomePage />
         }
-        return <Route path="/" component={App} />
+        return <App />
     }
 
      return (
