@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 // import './Login.css'
 import { authenticationService } from '../../service/RegisterLoginService'
-import { withRouter } from 'react-router-dom'
+
 import "./Buttons.css";
+
+
+
+import { withRouter, Link } from 'react-router-dom'
+
 
 class Login extends Component {
     constructor(props) {
         super(props)
         this.state = {
             username: "",
-            name: "",
-            email: "",
             password: ""
         }
     }
@@ -23,29 +26,34 @@ class Login extends Component {
         this.setState({
             [name]: value
         });
-
-
     }
 
 
     loginProfile = () => {
-        authenticationService.login(this.state.username, this.state.name, this.state.email, this.state.password)
+        authenticationService.login(this.state.username, this.state.password)
             .then((response) => {
                 return response.json();
-            }).then(response => {
-                authenticationService.succsesfullLogin(response.sessionId)
+            }).catch((error) => console.info(error))
+
+            .then(response => {
+                if (response.sessionId !== undefined) {
+                    return authenticationService.succsesfullLogin(response.sessionId)
+                } else {
+                    alert("Invalid username or password")
+                }
+            }).then(() => {
+                this.props.history.push('/');
+
             })
     }
     render() {
         return (
 
-
-            <div >
+            <div>
                 <label htmlFor="username">Username</label><input onChange={this.handleInputChange} name="username" type="text" placeholder="User Name" /><br />
                 <label htmlFor="password">Password</label><input onChange={this.handleInputChange} name="password" type="password" placeholder="Min 6 characters" />
-                <button className="form-control btnLoginB" onClick={this.loginProfile}>Login</button>
+                <Link to="/"> <button onClick={this.loginProfile}>Login</button></Link>
             </div>
-
 
         )
     }

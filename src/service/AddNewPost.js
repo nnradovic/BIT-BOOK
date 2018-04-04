@@ -27,7 +27,7 @@ class AddNewPost{
           headers: new Headers({
             "Content-Type": "application/json",
             "Key":  "3E09CF9",
-            "SessionId": "7A5D8FF8-B04D-4C8C-9812-8B44EB7E4C94"
+            "SessionId": sessionStorage.getItem("sessionId")
           })
         })
 

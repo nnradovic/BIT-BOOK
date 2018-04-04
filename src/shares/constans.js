@@ -12,7 +12,7 @@ const textUrlSingle = 'api/TextPosts/'
 const commentUrl = 'api/Comments?postId='
 const commentPost = 'api/Comments'
 const usersUrl = 'api/users?postId='
-const singleProfile = '/api/profile'
+const singleProfile = 'http://bitbookapi.azurewebsites.net/api/profiles'
 const deletePost = 'api/Posts/'
 const TYPES = {
     VIDEO: "video",
@@ -24,4 +24,4 @@ const login = 'api/login'
 
 
 
-export { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl, TYPES, newTextPostUrl, newImagePostUrl, newVideoPostUrl, validYoutube, validImageUrl, deletePost, commentPost, register, login}
+export { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl, TYPES, newTextPostUrl, newImagePostUrl, newVideoPostUrl, validYoutube, validImageUrl, deletePost, commentPost, register, login, singleProfile}

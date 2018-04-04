@@ -1,16 +1,16 @@
-import React from 'react'
-import {Component} from 'react'
-import Modal from './Modal'
+// import React from 'react'
+// import {Component} from 'react'
+// import Modal from './Modal'
 
-class EditProfile extends Component{
-    constructor(props){
-        super(props)
-    }
+// class EditProfile extends Component{
+//     constructor(props){
+//         super(props)
+//     }
 
-    render(){
-        return(
-            <Modal />
-        )
-    }
-}
-export default EditProfile
+//     render(){
+//         return(
+//             <Modal />
+//         )
+//     }
+// }
+// export default EditProfile

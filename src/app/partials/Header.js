@@ -25,7 +25,7 @@ const Header = () => {
                                     <span className="nav-link text-white navMenu" ><i className="ion-android-person"></i> Profile</span>
                                 </li>
                             </Link>
-                            <Link to="/">
+                            <Link to="/login">
                                 <li className="nav-item">
                                     <span onClick={authenticationService.logout} className="nav-link text-white navMenu" ><i className="ion-ios-download-outline"></i> Logout</span>
                                 </li>
