@@ -29,7 +29,7 @@ class PostItem extends React.Component {
                 "SessionId": sessionStorage.getItem("sessionId")
             }
         }).then(() => this.props.onPostDelete())
-        .catch((error) => console.info(error))
+            .catch((error) => console.info(error))
 
     }
 

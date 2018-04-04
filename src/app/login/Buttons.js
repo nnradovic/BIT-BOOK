@@ -1,12 +1,12 @@
-import React, {Component} from 'react'
-
+import React, { Component } from 'react'
+import './Buttons.css'
 
 class Buttons extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-this.state = {
-    value:''
-}
+        this.state = {
+            value: ''
+        }
     }
 
     handleState = (event) => {
@@ -19,17 +19,17 @@ this.state = {
         this.props.onCreatePost(type)
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
-            <ul className="nav nav-tabs" id="myTab" role="tablist">
-                <li className="nav-item">
-                    <a onClick={this.handleState} className="nav-link" id="login-tab" data-toggle="tab" href="#login" onClick={this.handleState} role="tab" aria-controls="login" aria-selected="false">Login</a>
-                </li>
-                <li className="nav-item">
-                    <a onClick={this.handleState} className="nav-link" id="register-tab" data-toggle="tab" href="#register" onClick={this.handleState} role="tab" aria-controls="register" aria-selected="false">Register</a>
-                </li>
-            </ul>
+                <ul className="nav nav-tabs" id="myTab" role="tablist">
+                    <li className="nav-item">
+                        <a onClick={this.handleState} className="nav-link btnLogin" id="login-tab" data-toggle="tab" href="#login" onClick={this.handleState} role="tab" aria-controls="login" aria-selected="false">Login</a>
+                    </li>
+                    <li className="nav-item">
+                        <a onClick={this.handleState} className="nav-link btnLogin" id="register-tab" data-toggle="tab" href="#register" onClick={this.handleState} role="tab" aria-controls="register" aria-selected="false">Register</a>
+                    </li>
+                </ul>
             </div>
         )
     }
