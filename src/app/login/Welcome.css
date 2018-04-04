@@ -1,0 +1,32 @@
+
+.login{
+    background-color: #102E4A;
+    color:white;
+  
+}
+
+input{
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    color:black;
+  
+}
+label{
+    font-size: 20px;
+}
+
+button{
+  margin-top: 20px
+}
+
+.logreg{
+    text-align: center;
+    font-size:24px;
+    font-weight: 900;
+}
+
+.btnLogin{
+    color: white;
+}
