@@ -32,7 +32,7 @@ class WelcomePage extends Component {
                         </div>
                         <div className="col-12 col-md-10 offset-md-1 col-sm-12">
                             <Buttons onCreatePost={this.onCreatePostClick} />
-                            {(this.state.value === 'register-tab') ? <Register /> : <Login />}
+                            {(this.state.value === 'register-tab') ? <Register onCreatePost={this.onCreatePostClick} /> : <Login />}
                         </div>
                     </div>
                 </div>

@@ -56,10 +56,10 @@ class Register extends Component {
                     <label htmlFor="login">Email Address</label><input onChange={this.handleInputChange} name="email" type="email" placeholder="Email Address" /><br />
                     <label htmlFor="password">Password</label><input onChange={this.handleInputChange} name="password" type="password" placeholder="Min 6 characters" />
 
-                    <button id="login-tab" onClick={this.registerProfile}>Register</button>
+
                 </div>
 
-                <button className="form-control btnLoginB" onClick={this.registerProfile}>Register</button>
+                <button id="login-tab" className="form-control btnLoginB" onClick={this.registerProfile}>Register</button>
             </div>
 
         )

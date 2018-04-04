@@ -61,15 +61,15 @@ class PostList extends React.Component {
     handlePostChange = (event) => {
         this.setState({ value: event.target.value })
         console.log(event.target.value);
-        
-        
+
+
     }
     onCreatePostClick = (type) => {
         this.setState({ btn: type })
 
 
     }
-            
+
 
     render() {
         const posts = this.state.posts;
@@ -92,7 +92,7 @@ class PostList extends React.Component {
 
                 <div className="container">
                     <div className="row">
-                        <div className="col-10 offset-1">
+                        <div className="col-12 ">
 
                             <Button onCreatePost={this.onCreatePostClick} />
 
