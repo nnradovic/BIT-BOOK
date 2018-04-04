@@ -24,7 +24,8 @@ class MainPage extends Component {
                 this.setState({
                     users: usersList
                 })
-            })
+            }).catch((error) => console.info(error))
+        
     }
 
     onSearchValueChange = (searchValue) => {

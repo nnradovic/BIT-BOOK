@@ -1,7 +1,7 @@
 import React ,{ Component } from 'react'
 import'./Register.css'
 import {authenticationService} from '../../service/RegisterLoginService'
-import {withRouter} from 'react-router-dom'
+import {withRouter, Link} from 'react-router-dom'
 
 
 class Login extends Component {
@@ -9,8 +9,6 @@ class Login extends Component {
         super(props)
         this.state={
             username:"",
-            name:"",
-            email:"",
             password:""
         }
     }
@@ -23,17 +21,24 @@ class Login extends Component {
         this.setState({
             [name]: value
         });
-      
-    
     }
 
 
     loginProfile = () => {
-        authenticationService.login(this.state.username,this.state.name, this.state.email, this.state.password)
+        authenticationService.login(this.state.username, this.state.password)
         .then((response) => {
            return response.json();
-        }).then(response =>{
-            authenticationService.succsesfullLogin(response.sessionId)
+        }).catch((error) => console.info(error))
+    
+        .then(response =>{
+            if(response.sessionId !== undefined){
+            return authenticationService.succsesfullLogin(response.sessionId)
+        } else {
+            alert("Invalid username or password")
+        }
+        }).then(()=>{
+            this.props.history.push('/');
+           
         })
     }
     render(){
@@ -41,10 +46,8 @@ class Login extends Component {
  
         <div>
         <label htmlFor="username">Username</label><input onChange={this.handleInputChange}  name="username" type="text" placeholder="User Name"/><br/>
-        <label htmlFor="name">Name</label><input onChange={this.handleInputChange}  name="name" type="text" placeholder="Full Name"/><br/>
-        <label htmlFor="login">Email Address</label><input onChange={this.handleInputChange} name="email" type="email" placeholder="Email Address"/><br/>
         <label htmlFor="password">Password</label><input onChange={this.handleInputChange} name="password" type="password" placeholder="Min 6 characters"/>
-        <button onClick={this.loginProfile}>Login</button>
+       <Link to="/"> <button onClick={this.loginProfile}>Login</button></Link>
         </div>
  
     )

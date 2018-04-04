@@ -8,9 +8,9 @@ import { url, textUrlGet, textUrlSingle, commentUrl, usersUrl, singleProfile } f
 class MyProfile extends Component {
     constructor(props) {
         super(props);
-        console.log(props.match.params);
+
         this.state = {
-            profile: '',
+            profile: {},
         }
     }
 
@@ -20,7 +20,9 @@ class MyProfile extends Component {
                 this.setState({
                  profile: profile
                 })
-            })
+                
+            }).catch((error) => console.info(error))
+        
         }
         getEditedProfile = () =>{
             postService.getProfile(`${url}/api/profile`)
@@ -28,7 +30,8 @@ class MyProfile extends Component {
                 this.setState({
                  profile: profile
                 })
-            })
+            }).catch((error) => console.info(error))
+        
         }
 
     noImage = () => {
@@ -53,7 +56,9 @@ class MyProfile extends Component {
                         {/* {this.noImage()} */}
                         <h1 className="profileName">{profile.name}</h1>
                         <p className="text-center edit"  data-toggle="modal" data-target="#exampleModal">Edit profile</p>
+                       
                         <Modal data={profile} data1={this.getEditedProfile}/>
+                       
                         <p className="profileDes">{profile.aboutShort}</p>
                         <div className="row">
                             <div className="col-6 offset-3">

@@ -91,8 +91,8 @@ class SinglePost extends React.Component {
             }),
             headers: {
                 "Content-Type": "application/json",
-                "Key": "bitbook",
-                "SessionId": "7A5D8FF8-B04D-4C8C-9812-8B44EB7E4C94"
+                "Key": "3E09CF9",
+                "SessionId": sessionStorage.getItem("sessionId")
             }
         }).then(() => this.loadComments())
     }
@@ -105,16 +105,16 @@ class SinglePost extends React.Component {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
-                "Key": "bitbook",
-                "SessionId": "7A5D8FF8-B04D-4C8C-9812-8B44EB7E4C94"
+                "Key": "3E09CF9",
+                "SessionId": sessionStorage.getItem("sessionId")
             }
-        }).then(() => {
+        }).catch((error) => console.info(error))
+
+        .then(() => {
 
             this.props.history.push('/post');
             // window.location.href = "#/posts";
-        }
-        )
-
+        }) 
     }
 
 

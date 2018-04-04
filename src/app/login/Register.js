@@ -12,6 +12,7 @@ class Register extends Component {
             name:"",
             email:"",
             password:"",
+            value:"",
         }
     }
 
@@ -28,12 +29,19 @@ handleInputChange = (event) => {
   
 
 }
-    registerProfile = () => {
+    registerProfile = (event) => {
         authenticationService.register(this.state.username,this.state.name, this.state.email, this.state.password)
-        .then(() => {
-            this.props.history.push("/")
-        })
-    }
+        
+                const type = event.target.id;
+        
+                this.setState({
+                    value: type
+                })
+        
+                this.props.onCreatePost(type)
+            }
+        
+    
 
 
 
@@ -46,7 +54,7 @@ handleInputChange = (event) => {
         <label htmlFor="login">Email Address</label><input onChange={this.handleInputChange} name="email" type="email" placeholder="Email Address"/><br/>
         <label htmlFor="password">Password</label><input onChange={this.handleInputChange} name="password" type="password" placeholder="Min 6 characters"/>
     
-        <button onClick={this.registerProfile}>Register</button>
+        <button id="login-tab" onClick={this.registerProfile}>Register</button>
      </div>
 
     )
