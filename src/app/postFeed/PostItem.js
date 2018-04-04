@@ -8,7 +8,7 @@ import PostContent from './PostContent'
 import { postService } from "./../../service/postService";
 import { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl, deletePost } from "./../../shares/constans";
 import PostInfo from './PostInfo'
-// import { deleteButton } from './DeleteButton';
+
 
 
 class PostItem extends React.Component {
@@ -34,7 +34,6 @@ class PostItem extends React.Component {
     }
 
     render() {
-
         return (
             <Link to={`/post/${this.props.post.type}/${this.props.post.id}`}>
                 <div className="card text">

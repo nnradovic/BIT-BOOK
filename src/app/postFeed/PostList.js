@@ -79,7 +79,7 @@ class PostList extends React.Component {
         return (
             <Fragment>
 
-                <div className="dropDownRight">
+                <div className="dropDownRight" >
                     <select onChange={this.handlePostChange} value={this.state.value} className="btnDrop">
                         <option value="" >Option</option>
                         <option value="video" >*Videos</option>
@@ -92,7 +92,7 @@ class PostList extends React.Component {
 
                 <div className="container">
                     <div className="row">
-                        <div className="col-12 ">
+                        <div className="col-12 col-sm-8 offset-sm-2 col-md-8 offset-md-2 item">
 
                             <Button onCreatePost={this.onCreatePostClick} />
 

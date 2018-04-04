@@ -33,18 +33,16 @@ class PostModal extends Component {
   }
 
   createPost = () => {
-   addNewPost.postNewPost(this.state.value, this.state.postType)
-   .then((response) => {
-    this.props.getPosts();
-    // this.clearInputs();
-  })
-  .catch((error) => console.info(error))
+    addNewPost.postNewPost(this.state.value, this.state.postType)
+      .then((response) => {
+        this.props.getPosts();
+
+      })
+      .catch((error) => console.info(error))
   }
 
 
-  // clearInputs = () => {
-  //   this.refs.fieldName.value = "";
-  // }
+
 
   renderPostForm = () => {
     if (this.state.postType === "post") {
