@@ -1,6 +1,7 @@
 import React from 'react'
 import {Component} from 'react'
 import {validYoutube} from '../../shares/constans'
+import Utils from "../../shares/utils"
 
 class VideoPostModal extends Component {
 constructor(props){
@@ -8,6 +9,7 @@ constructor(props){
   this.state={
     value:"",
   }
+  console.log(validYoutube);
 }
 
 componentDidMount() {
@@ -21,12 +23,8 @@ componentWillReceiveProps(nextProps) {
     value: nextProps.data2
   })
 }
-checkUrl = () => {
-  if(this.state.value.includes(validYoutube) ){
-   return ( <button type="button" onClick={this.props.data} value={this.props.data2} data-dismiss="modal"  className="btn btn-primary">POST</button>)
-  } else{
-    return (<button type="button" disabled data-dismiss="modal"  className="btn btn-primary">POST</button>)
-  }
+checkYouTubeUrl = () => {
+ return Utils.checkUrl(this.state.value,this.props.data, this.props.data2, validYoutube)
 }
 
     
@@ -36,7 +34,7 @@ return(
         <p>post video src</p>
         <input onChange={this.props.data1} type="video" ref="fieldName" className="form-control" id="exampleInputImage" placeholder="Enter youtube url"  aria-describedby="imageHelp" />
         <div className="modal-footer">
-          {this.checkUrl()}
+          {this.checkYouTubeUrl()}
         </div>
       </div>
     )

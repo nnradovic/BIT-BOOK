@@ -5,10 +5,12 @@ import './index.css';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import App from './app/App.js';
 import registerServiceWorker from './registerServiceWorker';
+import WelcomePage from './app/login/WelcomePage'
+import { RootComponent } from './app/RootComponent';
 
 ReactDOM.render(
     <HashRouter>
-        <App />
+        <RootComponent />
     </HashRouter>,
     document.getElementById('root'));
 registerServiceWorker();

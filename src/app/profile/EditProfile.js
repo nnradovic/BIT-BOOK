@@ -7,10 +7,6 @@ class EditProfile extends Component{
         super(props)
     }
 
-
-
-
-
     render(){
         return(
             <Modal />

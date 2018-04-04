@@ -1,25 +1,18 @@
 import React from 'react'
 import "./People.css";
 import {Link} from 'react-router-dom'
+import Utils from '../../shares/utils'
 
 
 const UserItem = (props) => {
   const {avatarUrl,name,aboutShort,lastPostDate, id} = props.user 
- 
-  
+ const today = new Date();  
 
-   const getLastPostDate = ()=>{
-   const postDate = `${lastPostDate.getDate()}.${(lastPostDate.getMonth()+1)}.${lastPostDate.getFullYear()}`;
-   const today = new Date()
-   const todayDate = `${today.getDate()}.${(today.getMonth()+1)}.${today.getFullYear()}`
-   const postTime = ` ${lastPostDate.getHours()}:${lastPostDate.getMinutes()  }`
-   
-   if (postDate === todayDate){
-     return postTime
-   } else {
-     return postDate
-   }
- }
+  // Imported from utils
+ const getLastPostDate = ()=>{
+  return Utils.checkPostTime(Utils.getPostDate(lastPostDate), Utils.getTodayDate(today), Utils.getPostTime(lastPostDate))
+  }
+      
 
     return(
 <div className="card col-12">

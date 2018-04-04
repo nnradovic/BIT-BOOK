@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {authenticationService} from '../../service/RegisterLoginService'
 const Header = () => {
 
     return (
@@ -24,6 +25,12 @@ const Header = () => {
                                     <span className="nav-link text-white navMenu" ><i className="ion-android-person"></i> Profile</span>
                                 </li>
                             </Link>
+                            <Link to="/">
+                                <li className="nav-item">
+                                    <span onClick={authenticationService.logout} className="nav-link text-white navMenu" ><i className="ion-android-person"></i> Logout</span>
+                                </li>
+                            </Link>
+                            
 
                         </ul>
                     </div>

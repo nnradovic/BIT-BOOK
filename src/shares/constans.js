@@ -19,7 +19,9 @@ const TYPES = {
     TEXT: "text",
     IMAGE: "image"
 }
+const register = 'api/register'
+const login = 'api/login'
 
 
 
-export { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl, TYPES, newTextPostUrl, newImagePostUrl, newVideoPostUrl, validYoutube, validImageUrl, deletePost, commentPost }
+export { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl, TYPES, newTextPostUrl, newImagePostUrl, newVideoPostUrl, validYoutube, validImageUrl, deletePost, commentPost, register, login}

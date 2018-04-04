@@ -11,10 +11,6 @@ class MyProfile extends Component {
         console.log(props.match.params);
         this.state = {
             profile: '',
-            
-            
-            
-           
         }
     }
 
@@ -45,12 +41,9 @@ class MyProfile extends Component {
             return <img className="profileImg" src={this.state.profile.avatarUrl} alt="" />
         }
     }
-    
-  
 
     render() {
         const profile = this.state.profile;
-        // console.log(profile);
 
         return (
             <div className="container">

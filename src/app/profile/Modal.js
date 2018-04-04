@@ -24,7 +24,6 @@ class Modal extends Component {
       }
 
     updateProfile = () => {
-        console.log(this.props.data.userId);
         editProfile.edit(this.state.userName,this.state.userDescription, this.state.image,this.props.data.userId, this.props.data.about, this.props.data.email)
         .then(response =>{
             this.props.data1()
