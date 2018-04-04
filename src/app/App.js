@@ -20,6 +20,7 @@ class App extends Component {
         <Header />
         <Switch >
           <Route exact path="/post/:type/:id" component={SinglePost} />
+          <Redirect from="/post/:type/:id" to="/" />
           <Route exact path="/" component={PostPage} />
           <Route exact path='/people' component={MainPage} />
           <Route path="/post/:type/:id" component={SinglePost} />
