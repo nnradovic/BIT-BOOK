@@ -9,6 +9,7 @@ export const RootComponent = () => {
         if (!authenticationService.isUserAuthenticated()) {
             return <WelcomePage />
         }
+        
         return <App />
     }
 

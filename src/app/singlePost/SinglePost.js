@@ -32,7 +32,7 @@ class SinglePost extends React.Component {
                         postItem: video
                     })
 
-                })
+                }).catch(err => this.props.history.push('/post'))
 
         } else if (this.props.match.params.type === TYPES.TEXT) {
             // TEXT
@@ -42,7 +42,7 @@ class SinglePost extends React.Component {
                         postItem: text
                     })
 
-                })
+                }).catch(err => this.props.history.push('/post'))
         } else {
             // IMAGE
             postService.getSingleImagePosts(`${url}${imageUrlSingle}${this.props.match.params.id}`)
@@ -51,7 +51,7 @@ class SinglePost extends React.Component {
                         postItem: image
                     })
 
-                })
+                }).catch(err => this.props.history.push('/post'))
         }
 
         //ALL

@@ -64,9 +64,12 @@ class PostList extends React.Component {
         
         
     }
-            onCreatePostClick = (type) => {
-                this.setState({ btn: type })
-            }
+    onCreatePostClick = (type) => {
+        this.setState({ btn: type })
+
+
+    }
+            
 
     render() {
         const posts = this.state.posts;
