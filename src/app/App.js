@@ -1,13 +1,12 @@
 import React, { Component, Fragment } from 'react';
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import PostPage from "./postFeed/PostPage";
 import Header from './partials/Header'
 import Footer from './partials/Footer'
-import ImageView from "./postFeed/ImageView";
+
 import MainPage from "./peoplePage/MainPage"
-// import ImageViewSingle from "./postFeed/ImageViewSingle";
-import VideoView from "./postFeed/VideoView";
-import TextView from "./postFeed/TextView";
+
+
 import './App.css';
 import SinglePost from './singlePost/SinglePost';
 import MyProfile from './profile/MyProfile';

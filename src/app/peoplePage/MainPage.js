@@ -1,8 +1,5 @@
 import { Component, Fragment } from 'react'
 import React from 'react'
-import Header from '../partials/Header'
-import Footer from '../partials/Footer'
-// import Search from './Search'
 import { postService } from '../../service/postService';
 import UsersList from './UsersList'
 import { url } from '../../shares/constans'
@@ -25,7 +22,7 @@ class MainPage extends Component {
                     users: usersList
                 })
             }).catch((error) => console.info(error))
-        
+
     }
 
     onSearchValueChange = (searchValue) => {
@@ -46,7 +43,7 @@ class MainPage extends Component {
         return (
             <Fragment>
                 <Search onSearchValueChange={this.onSearchValueChange} />
-                {console.log(this.getUsers())}
+
                 <UsersList users={this.getUsers()} />
             </Fragment>
         )

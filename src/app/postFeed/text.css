@@ -8,10 +8,13 @@
     margin: 20px;
     font-weight: 500;
     border-bottom: 2px solid #D3D9DE;
-    text-decoration: none;
     font-size: 22px;
 }
 .textBoot{
     font-size: 25px;
     font-weight: 600;
+}
+.postContentDes{
+    
+    text-decoration: none;
 }

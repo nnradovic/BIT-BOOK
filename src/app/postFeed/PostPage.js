@@ -1,7 +1,4 @@
 import React, { Fragment } from 'react';
-import VideoView from "./VideoView";
-import TextView from "./TextView";
-import ImageView from "./ImageView";
 import PostList from "./PostList";
 
 class PostPage extends React.Component {

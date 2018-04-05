@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { Fragment } from 'react'
-import { Link } from 'react-router-dom'
 import WelcomeLoginText from './WelcomeLoginText'
 import WelcomeRegisterText from './WelcomeRegisterText'
 import Register from './Register'

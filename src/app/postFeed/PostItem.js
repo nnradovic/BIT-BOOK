@@ -1,20 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import "./PostList.css";
-import VideoView from "./VideoView";
-import TextView from "./TextView";
-import ImageView from "./ImageView";
 import PostContent from './PostContent'
-import { postService } from "./../../service/postService";
-import { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl, deletePost } from "./../../shares/constans";
 import PostInfo from './PostInfo'
-// import { deleteButton } from './DeleteButton';
+
 
 
 class PostItem extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
 
 
@@ -34,9 +29,8 @@ class PostItem extends React.Component {
     }
 
     render() {
-
         return (
-            <Link to={`/post/${this.props.post.type}/${this.props.post.id}`}>
+            <Link to={`/post/${this.props.post.type}/${this.props.post.id}`} style={{ textDecoration: 'none' }}>
                 <div className="card text">
                     <div className="card-body">
                         <div className="btnDeleteDiv">

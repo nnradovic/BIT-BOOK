@@ -2,9 +2,9 @@ import React, { Fragment } from 'react';
 import VideoView from "./VideoView";
 import TextView from "./TextView";
 import ImageView from "./ImageView";
-import { postService } from "./../../service/postService";
-import { url, textUrlGet, TYPES } from "./../../shares/constans";
-import PostInfo from './PostInfo';
+
+import { TYPES } from "./../../shares/constans";
+
 const PostContent = (props) => {
 
     const postContent = () => {

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
 import { postService } from '../../service/postService'
-import MyProfile from './MyProfile'
 import { singleProfile } from '../../shares/constans'
 import Utils from "../../shares/utils"
 
@@ -11,13 +10,13 @@ class Modal extends Component {
         this.state = {
             userName: "",
             userDescription: '',
-            image: '', 
+            image: '',
             about: '',
             email: "",
         }
     }
     componentDidMount = () => {
-      
+
     }
 
     componentWillReceiveProps = (props) => {
@@ -29,7 +28,7 @@ class Modal extends Component {
             email: props.data.email,
         })
     }
-    
+
     handleInputChange = (event) => {
         const target = event.target;
         const value = target.value
@@ -46,7 +45,7 @@ class Modal extends Component {
                 console.log(response);
                 this.props.data1()
             }).catch((error) => console.log(error))
-        
+
     }
     checkProfileImgUrl = () => {
         return Utils.validateProfileImage(this.state.image,this.updateProfile)

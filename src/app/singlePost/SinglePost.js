@@ -111,11 +111,11 @@ class SinglePost extends React.Component {
             }
         }).catch((error) => console.info(error))
 
-        .then(() => {
+            .then(() => {
 
-            this.props.history.push('/post');
-            // window.location.href = "#/posts";
-        }) 
+                this.props.history.push('/post');
+                // window.location.href = "#/posts";
+            })
     }
 
 
@@ -123,11 +123,10 @@ class SinglePost extends React.Component {
     btnDisabled = () => {
         if (this.state.newComment === "") {
             return (
-
-                <button className="btn btn-outline-secondary" type="button" disabled>SEND</button>
+                <button className="btn btnSend" type="button" disabled>SEND</button>
             )
         } else {
-            return <button className="btn btn-outline-secondary" onClick={this.postComment} type="button">SEND</button>
+            return <button className="btn btnSend" onClick={this.postComment} type="button">SEND</button>
         }
 
     }
