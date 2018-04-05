@@ -71,6 +71,7 @@ class SinglePost extends React.Component {
                     comments: comments,
                     newComment: ""
                 })
+               
             })
 
 
@@ -157,7 +158,8 @@ class SinglePost extends React.Component {
                                 </div>
                             </div>
 
-                            {this.state.comments.map(comment => {
+                            {this.state.comments.map((comment) => {
+                                console.log(comment.id);
                                 return (
                                     <div>
                                         <Comment key={comment.id} data={comment} />

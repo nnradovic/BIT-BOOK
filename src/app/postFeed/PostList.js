@@ -3,7 +3,7 @@ import PostModal from '../newpost/PostModal'
 import "./PostList.css";
 import Button from './Button'
 import { postService } from "./../../service/postService";
-import { url, textUrlGet } from "./../../shares/constans";
+import { url, textUrlGet, headers1 } from "./../../shares/constans";
 import PostItem from "./PostItem";
 
 class PostList extends React.Component {
@@ -27,6 +27,7 @@ class PostList extends React.Component {
 
     componentDidMount() {
         this.fetchPosts()
+        console.log(...headers1);
     }
 
     fetchPosts = () => {
