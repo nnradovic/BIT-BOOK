@@ -1,8 +1,11 @@
-import {headers} from '../shares/constans'
+import {headers, headers1} from '../shares/constans'
 
 const myFetchGet = (url) => {
     const requestOpt = {
-        headers: headers
+        headers: {
+            ...headers1,
+            "SessionId": sessionStorage.getItem("sessionId")
+        }
     }
 
     return fetch(url, requestOpt).then(response => {
@@ -22,7 +25,10 @@ const myFetchPut = (url,name,description,image,about,email) => {
     const requestOpt = {
         method: 'PUT',
         body: JSON.stringify({name:name, aboutShort:description, avatarUrl:image,  about:about, email:email}),
-        headers: headers
+        headers: {
+            ...headers1,
+            "SessionId": sessionStorage.getItem("sessionId")
+        }
     }
     return fetch(url, requestOpt).then(response => {
         if (response.status === 404) {

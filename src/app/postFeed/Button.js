@@ -8,7 +8,6 @@ class Button extends Component {
         this.state = {
             btn: "",
         }
-        console.log(props);
     }
 
     handleState = (event) => {

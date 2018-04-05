@@ -40,7 +40,9 @@ class Register extends Component {
 
         const type = event.target.id;
         this.setState({
-            value: type
+            value: type,
+           
+            
         })
 
         this.props.onCreatePost(type);

@@ -37,14 +37,13 @@ class Login extends Component {
 
             .then(response => {
                 if (response.sessionId !== undefined) {
-                    return authenticationService.succsesfullLogin(response.sessionId)
+                    authenticationService.succsesfullLogin(response.sessionId)
                 } else {
                     alert("Invalid username or password")
                 }
-            }).then(() => {
-                this.props.history.push('/');
-
+                return response;
             })
+            .then((r) => r).then(() => this.props.history.push('/'))
     }
     render() {
         return (
@@ -52,7 +51,7 @@ class Login extends Component {
             <div>
                 <label htmlFor="username">Username</label><input onChange={this.handleInputChange} name="username" type="text" placeholder="User Name" /><br />
                 <label htmlFor="password">Password</label><input onChange={this.handleInputChange} name="password" type="password" placeholder="Min 6 characters" />
-                <Link to="/"> <button onClick={this.loginProfile}>Login</button></Link>
+                <button onClick={this.loginProfile}>Login</button>
             </div>
 
         )
