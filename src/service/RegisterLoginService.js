@@ -1,4 +1,4 @@
-import {register,url, login} from '../shares/constans'
+import {register,url, login, headers,headers1} from '../shares/constans'
 
 class AuthenticationService {
 register = (username,name, email, password) => {
@@ -6,11 +6,7 @@ register = (username,name, email, password) => {
           return fetch(`${url}${register}`, {
              method: 'POST',
              body: JSON.stringify({username:username, name:name, email:email, password:password}),
-             headers: new Headers({
-               "Content-Type": "application/json",
-               "Key": "3E09CF9",
-               
-             })
+             headers: headers
            })
    
        }
@@ -19,11 +15,7 @@ login = (username, password) => {
     return fetch(`${url}${login}`, {
         method: 'POST',
         body: JSON.stringify({username, password }),
-        headers: new Headers({
-          "Content-Type": "application/json",
-          "Key":  "3E09CF9",
-          
-        })
+        headers:headers1
       })
 
   }

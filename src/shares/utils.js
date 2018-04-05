@@ -11,6 +11,7 @@ class Utils {
     }
 
     static getPostTime = (lastPostDate) => {
+        console.log(lastPostDate.getHours());
         return ` ${lastPostDate.getHours()}:${lastPostDate.getMinutes()}`
     }
 

@@ -53,13 +53,21 @@ class PostService {
                 })
             })
     }
-    getUsers = (url) => {
+    getUser = (url) => {
         return myFetchGet(url)
             .then(user => {
                 // return users.map(user => {
                     return new User(user)
                 })
             // })
+    }
+    getUsers = (url) => {
+        return myFetchGet(url)
+            .then(users => {
+                 return users.map(user => {
+                    return new User(user)
+                })
+             })
     }
 
 

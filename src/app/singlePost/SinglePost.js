@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import './SinglePost.css'
-import { url, textUrlGet, imageUrlSingle, videoUrlSingle, commentPost, textUrlSingle, commentUrl, usersUrl, TYPES } from "./../../shares/constans"
+import { url, textUrlGet, imageUrlSingle, videoUrlSingle, commentPost, textUrlSingle, commentUrl, usersUrl, TYPES, headers } from "./../../shares/constans"
 import { postService } from "./../../service/postService";
 import Comment from "./../postFeed/Comment";
 import PostContent from './../postFeed/PostContent';
@@ -92,11 +92,7 @@ class SinglePost extends React.Component {
                 "authorId":this.state.postItem.userId,
                 "authorName": this.state.postItem.userDisplayName
             }),
-            headers: {
-                "Content-Type": "application/json",
-                "Key": "3E09CF9",
-                "SessionId": sessionStorage.getItem("sessionId")
-            }
+            headers: headers
         }).then(() => this.loadComments())
     }
 
@@ -106,11 +102,7 @@ class SinglePost extends React.Component {
 
         return fetch(`http://bitbookapi.azurewebsites.net/api/Posts/${this.props.match.params.id}`, {
             method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                "Key": "3E09CF9",
-                "SessionId": sessionStorage.getItem("sessionId")
-            }
+            headers:headers
         }).catch((error) => console.info(error))
 
         .then(() => {

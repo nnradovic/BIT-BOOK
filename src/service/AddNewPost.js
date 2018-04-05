@@ -1,4 +1,4 @@
-import {newVideoPostUrl, newImagePostUrl, newTextPostUrl} from '../shares/constans'
+import {newVideoPostUrl, newImagePostUrl, newTextPostUrl, headers} from '../shares/constans'
 
 class AddNewPost{
 
@@ -24,11 +24,7 @@ class AddNewPost{
        return fetch(url, {
           method: 'POST',
           body: body,
-          headers: new Headers({
-            "Content-Type": "application/json",
-            "Key":  "3E09CF9",
-            "SessionId": sessionStorage.getItem("sessionId")
-          })
+          headers: headers
         })
 
     }

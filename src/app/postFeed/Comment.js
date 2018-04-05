@@ -16,7 +16,7 @@ class Comment extends React.Component {
 
     componentDidMount() {
         console.log(this.props.data.authorId);
-        postService.getUsers(`${url}${usersUrl}/${this.props.data.authorId}`)
+        postService.getUser(`${url}${usersUrl}/${this.props.data.authorId}`)
             .then(users => {
                 console.log(users);
                 this.setState({

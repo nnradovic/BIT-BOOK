@@ -22,6 +22,22 @@ const TYPES = {
 const register = 'api/register'
 const login = 'api/login'
 
+const headers = 
+    new Headers({
+        "Content-Type": "application/json",
+        "Key": " 3E09CF9",
+        "SessionId": sessionStorage.getItem("sessionId")
+    })
+    const headers1 = 
+    new Headers({
+        "Content-Type": "application/json",
+        "Key": " 3E09CF9",
+       
+    })
+    
+    
 
 
-export { url, textUrlGet, imageUrlSingle, videoUrlSingle, textUrlSingle, commentUrl, usersUrl, TYPES, newTextPostUrl, newImagePostUrl, newVideoPostUrl, validYoutube, validImageUrl, deletePost, commentPost, register, login, singleProfile}
+
+
+export { url, textUrlGet, imageUrlSingle, headers,headers1, videoUrlSingle, textUrlSingle, commentUrl, usersUrl, TYPES, newTextPostUrl, newImagePostUrl, newVideoPostUrl, validYoutube, validImageUrl, deletePost, commentPost, register, login, singleProfile}

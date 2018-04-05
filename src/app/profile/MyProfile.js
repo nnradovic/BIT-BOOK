@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import "./Profile.css";
 import { postService } from './../../service/postService';
-import EditProfile from './EditProfile'
 import Modal from './Modal'
 import { url, textUrlGet, textUrlSingle, commentUrl, usersUrl, singleProfile } from "./../../shares/constans"
 
