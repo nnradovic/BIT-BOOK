@@ -2,6 +2,7 @@ import React from 'react'
 import { Component } from 'react'
 import { postService } from '../../service/postService'
 import { singleProfile } from '../../shares/constans'
+import Utils from "../../shares/utils"
 
 class Modal extends Component {
     constructor(props) {
@@ -46,6 +47,9 @@ class Modal extends Component {
             }).catch((error) => console.log(error))
 
     }
+    checkProfileImgUrl = () => {
+        return Utils.validateProfileImage(this.state.image,this.updateProfile)
+       }
 
 
     render() {
@@ -68,7 +72,7 @@ class Modal extends Component {
 
                         </div>
                         <div className="modal-footer">
-                            <button onClick={this.updateProfile} type="button" data-dismiss="modal" className="btn btn-primary">Save changes</button>
+                        {this.checkProfileImgUrl()}
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>

@@ -15,18 +15,19 @@ class Comment extends React.Component {
 
 
     componentDidMount() {
-        postService.getUsers(`${url}${usersUrl}${this.props.data.authorId}`)
+        console.log(this.props.data.authorId);
+        postService.getUser(`${url}${usersUrl}/${this.props.data.authorId}`)
             .then(users => {
-
+                console.log(users);
                 this.setState({
-                    user: users[0]
+                    user: users
                 })
             })
 
     }
 
     render() {
-
+        console.log(this.state.user.name);
 
 
         return (

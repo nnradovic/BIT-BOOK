@@ -70,7 +70,7 @@ class PostList extends React.Component {
     render() {
         const posts = this.state.posts;
         let filterPost = posts.filter((postType) => { return postType.type.indexOf(this.state.value) !== -1 })
-
+        //console.log(filterPost);
 
         return (
             <Fragment>

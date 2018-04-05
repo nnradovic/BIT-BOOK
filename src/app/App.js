@@ -20,13 +20,10 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path="/post/:type/:id" component={SinglePost} />
-          <Redirect from="/post/:type/:id" to="/" />
-          <Route exact path="/" component={PostPage} />
+          <Route exact path="/profile/:id" component={Profile} />
           <Route exact path='/people' component={MainPage} />
-          <Route path="/post/:type/:id" component={SinglePost} />
-          <Route path="/profile/:id" component={Profile} />
-          <Route path="/profile" component={MyProfile} />
-          <Route path="/" component={PostPage} />
+          <Route exact path="/profile" component={MyProfile} />
+          <Route exact path="/" component={PostPage} />
         </Switch>
 
         <Footer />

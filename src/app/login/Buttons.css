@@ -6,3 +6,6 @@ a{
 .btnLoginB:hover{
  background: skyblue;
 }
+.disabled{
+    cursor:not-allowed;
+}

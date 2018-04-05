@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import './SinglePost.css'
-import { url, imageUrlSingle, videoUrlSingle, commentPost, textUrlSingle, commentUrl, TYPES } from "./../../shares/constans"
+import { url, textUrlGet, imageUrlSingle, videoUrlSingle, commentPost, textUrlSingle, commentUrl, usersUrl, TYPES, headers, headers1 } from "./../../shares/constans"
 import { postService } from "./../../service/postService";
 import Comment from "./../postFeed/Comment";
 import PostContent from './../postFeed/PostContent';
@@ -16,42 +16,43 @@ class SinglePost extends React.Component {
             newComment: "",
 
         }
-
-
+        
+        
     }
-
-
+    
+    
     componentDidMount() {
         if (this.props.match.params.type === TYPES.VIDEO) {
-
+            
             //VIDEO
             postService.getSingleVideoPosts(`${url}${videoUrlSingle}${this.props.match.params.id}`)
-                .then(video => {
-
-                    this.setState({
-                        postItem: video
-                    })
-
-                }).catch(err => this.props.history.push('/post'))
-
+            .then(video => {
+                
+                this.setState({
+                    postItem: video
+                })
+                
+            }).catch(err => this.props.history.push('/post'))
+            
         } else if (this.props.match.params.type === TYPES.TEXT) {
             // TEXT
             postService.getSingleTextPosts(`${url}${textUrlSingle}${this.props.match.params.id}`)
-                .then(text => {
-                    this.setState({
-                        postItem: text
-                    })
-
-                }).catch(err => this.props.history.push('/post'))
+            .then(text => {
+                this.setState({
+                    postItem: text
+                })
+                
+            }).catch(err => this.props.history.push('/post'))
         } else {
             // IMAGE
             postService.getSingleImagePosts(`${url}${imageUrlSingle}${this.props.match.params.id}`)
-                .then(image => {
-                    this.setState({
-                        postItem: image
-                    })
-
-                }).catch(err => this.props.history.push('/post'))
+            .then(image => {
+                this.setState({
+                    postItem: image
+                })
+                
+            }).catch(err => this.props.history.push('/post'))
+            
         }
 
         //ALL
@@ -87,11 +88,12 @@ class SinglePost extends React.Component {
             method: "POST",
             body: JSON.stringify({
                 "postId": this.props.match.params.id,
-                "body": this.state.newComment
+                "body": this.state.newComment,
+                "authorId":this.state.postItem.userId,
+                "authorName": this.state.postItem.userDisplayName
             }),
             headers: {
-                "Content-Type": "application/json",
-                "Key": "3E09CF9",
+                ...headers1,
                 "SessionId": sessionStorage.getItem("sessionId")
             }
         }).then(() => this.loadComments())
@@ -103,9 +105,8 @@ class SinglePost extends React.Component {
 
         return fetch(`http://bitbookapi.azurewebsites.net/api/Posts/${this.props.match.params.id}`, {
             method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                "Key": "3E09CF9",
+            headers:{
+                ...headers1,
                 "SessionId": sessionStorage.getItem("sessionId")
             }
         }).catch((error) => console.info(error))
