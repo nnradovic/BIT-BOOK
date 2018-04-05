@@ -1,11 +1,7 @@
 import React, { Fragment } from 'react';
-import VideoView from "./VideoView";
-import TextView from "./TextView";
-import ImageView from "./ImageView";
 import PostModal from '../newpost/PostModal'
 import "./PostList.css";
 import Button from './Button'
-
 import { postService } from "./../../service/postService";
 import { url, textUrlGet } from "./../../shares/constans";
 import PostItem from "./PostItem";
@@ -74,12 +70,12 @@ class PostList extends React.Component {
     render() {
         const posts = this.state.posts;
         let filterPost = posts.filter((postType) => { return postType.type.indexOf(this.state.value) !== -1 })
-        console.log(filterPost);
+
 
         return (
             <Fragment>
 
-                <div className="dropDownRight">
+                <div className="dropDownRight" >
                     <select onChange={this.handlePostChange} value={this.state.value} className="btnDrop">
                         <option value="" >Option</option>
                         <option value="video" >*Videos</option>
@@ -92,7 +88,7 @@ class PostList extends React.Component {
 
                 <div className="container">
                     <div className="row">
-                        <div className="col-12 ">
+                        <div className="col-12 col-sm-8 offset-sm-2 col-md-8 offset-md-2 item">
 
                             <Button onCreatePost={this.onCreatePostClick} />
 

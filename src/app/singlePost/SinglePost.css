@@ -89,3 +89,13 @@ iframe{
 .postan{
     padding: 20px;
 }
+.input-group-append{
+  height: 50px;
+}
+.btnSend{
+    margin-top:0;
+    background: #102E4A;
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+}

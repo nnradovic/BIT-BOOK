@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import './SinglePost.css'
-import { url, textUrlGet, imageUrlSingle, videoUrlSingle, commentPost, textUrlSingle, commentUrl, usersUrl, TYPES } from "./../../shares/constans"
+import { url, imageUrlSingle, videoUrlSingle, commentPost, textUrlSingle, commentUrl, TYPES } from "./../../shares/constans"
 import { postService } from "./../../service/postService";
 import Comment from "./../postFeed/Comment";
 import PostContent from './../postFeed/PostContent';
@@ -110,11 +110,11 @@ class SinglePost extends React.Component {
             }
         }).catch((error) => console.info(error))
 
-        .then(() => {
+            .then(() => {
 
-            this.props.history.push('/post');
-            // window.location.href = "#/posts";
-        }) 
+                this.props.history.push('/post');
+                // window.location.href = "#/posts";
+            })
     }
 
 
@@ -122,11 +122,10 @@ class SinglePost extends React.Component {
     btnDisabled = () => {
         if (this.state.newComment === "") {
             return (
-
-                <button className="btn btn-outline-secondary" type="button" disabled>SEND</button>
+                <button className="btn btnSend" type="button" disabled>SEND</button>
             )
         } else {
-            return <button className="btn btn-outline-secondary" onClick={this.postComment} type="button">SEND</button>
+            return <button className="btn btnSend" onClick={this.postComment} type="button">SEND</button>
         }
 
     }

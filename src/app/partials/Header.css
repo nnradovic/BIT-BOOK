@@ -1,0 +1,25 @@
+span:hover{
+  background-color: white;
+  color:#102E4A !important;
+  border-radius: 10px;
+
+
+ 
+}
+
+span{
+    text-align: center;
+ 
+    text-decoration-line: none ;
+}
+
+.link:hover{
+    text-decoration-line: none ;
+  
+  
+}
+.link:focus{
+    text-decoration-line: none ;
+    
+  
+}

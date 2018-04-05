@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import './text.css';
 
 
-import PostInfo from './PostInfo';
+
 
 const TextView = (props) => {
 

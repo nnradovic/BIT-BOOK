@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import "./Profile.css";
 import { postService } from './../../service/postService';
-import EditProfile from './EditProfile'
 import Modal from './Modal'
-import { url, textUrlGet, textUrlSingle, commentUrl, usersUrl, singleProfile } from "./../../shares/constans"
+import { url } from "./../../shares/constans"
 
 class MyProfile extends Component {
     constructor(props) {
@@ -18,21 +17,21 @@ class MyProfile extends Component {
         postService.getProfile(`${url}/api/profile`)
             .then(profile => {
                 this.setState({
-                 profile: profile
+                    profile: profile
                 })
-                
+
             }).catch((error) => console.info(error))
-        
-        }
-        getEditedProfile = () =>{
-            postService.getProfile(`${url}/api/profile`)
+
+    }
+    getEditedProfile = () => {
+        postService.getProfile(`${url}/api/profile`)
             .then(profile => {
                 this.setState({
-                 profile: profile
+                    profile: profile
                 })
             }).catch((error) => console.info(error))
-        
-        }
+
+    }
 
     noImage = () => {
         if (this.state.profile.avatarUrl === undefined) {
@@ -55,16 +54,16 @@ class MyProfile extends Component {
                         <img className="profileImg" src={profile.avatarUrl} alt="" />
                         {/* {this.noImage()} */}
                         <h1 className="profileName">{profile.name}</h1>
-                        <p className="text-center edit"  data-toggle="modal" data-target="#exampleModal">Edit profile</p>
-                       
-                        <Modal data={profile} data1={this.getEditedProfile}/>
-                       
+                        <p className="text-center edit" data-toggle="modal" data-target="#exampleModal">Edit profile</p>
+
+                        <Modal data={profile} data1={this.getEditedProfile} />
+
                         <p className="profileDes">{profile.aboutShort}</p>
                         <div className="row">
                             <div className="col-6 offset-3">
                                 <button type="button " className="btn btn-outline-secondary btnOne"><i className="ion-android-clipboard"></i> {profile.postsCount} Posts</button>
                                 <button type="button" className="btn btn-outline-secondary  btnTwo"><i className="ion-ios-compose-outline"></i>{profile.commentsCount} Comments</button>
-                                
+
                             </div>
                         </div>
                     </div>
