@@ -1,11 +1,7 @@
 import React, { Fragment } from 'react';
-import VideoView from "./VideoView";
-import TextView from "./TextView";
-import ImageView from "./ImageView";
 import PostModal from '../newpost/PostModal'
 import "./PostList.css";
 import Button from './Button'
-
 import { postService } from "./../../service/postService";
 import { url, textUrlGet } from "./../../shares/constans";
 import PostItem from "./PostItem";
@@ -74,7 +70,7 @@ class PostList extends React.Component {
     render() {
         const posts = this.state.posts;
         let filterPost = posts.filter((postType) => { return postType.type.indexOf(this.state.value) !== -1 })
-        console.log(filterPost);
+
 
         return (
             <Fragment>

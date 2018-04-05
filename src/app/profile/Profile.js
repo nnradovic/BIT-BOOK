@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import "./Profile.css";
 import { postService } from './../../service/postService';
-import { url, textUrlGet, textUrlSingle, commentUrl, usersUrl, singleProfile } from "./../../shares/constans"
+import { url } from "./../../shares/constans"
 
 class Profile extends Component {
     constructor(props) {
         super(props);
-        console.log(props.match.params);
+
         this.state = {
             profile: '',
-            user:null
+            user: null
         }
     }
 
@@ -17,9 +17,9 @@ class Profile extends Component {
         postService.getProfile(`${url}/api/users/${this.props.match.params.id}`)
             .then(profile => {
                 this.setState({
-                 profile: profile
+                    profile: profile
                 })
-                
+
 
             })
 

@@ -7,19 +7,6 @@ class Post {
         this.type = post.type;
         this.commentsNum = post.commentsNum;
     }
-    getDatum() {
-        const day = this.dateCreated.getDate();
-        const month = this.dateCreated.getMonth();
-        const year = this.dateCreated.getFullYear();
-
-        return `day / month / year `
-    }
-
-
-    // isVideo() {
-    //     return this.type === 'video'
-    // }
-    // https://www.youtube.com/embed/CwjhxtBmQys
 
 }
 
