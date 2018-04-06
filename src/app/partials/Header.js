@@ -8,7 +8,7 @@ const Header = () => {
         <div className="container-fluid">
 
             <nav className="navbar navbar-expand-lg navbar-light">
-                <Link to="/" >    <a className="navbar-brand text-white logo"><i className="ion-planet"></i> Bitbook</a> </Link>
+                <Link to="/" >    <span className="navbar-brand text-white logo"><i className="ion-planet"></i> Bitbook</span> </Link>
                 <button className="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -27,7 +27,7 @@ const Header = () => {
                             </li>
 
 
-                            <li className="nav-item"><Link className="link" to="/">
+                            <li className="nav-item"><Link className="link" to="/login">
                                 <span onClick={authenticationService.logout} className="nav-link text-white navMenu" ><i className="ion-ios-download-outline"></i> Logout</span>  </Link>
                             </li>
 

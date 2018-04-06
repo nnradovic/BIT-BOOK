@@ -24,10 +24,10 @@ class Buttons extends Component {
             <div>
                 <ul className="nav nav-tabs" id="myTab" >
                     <li className="nav-item">
-                        <a onClick={this.handleState} className="nav-link btnLogin" id="login-tab" data-toggle="tab" href="#login" onClick={this.handleState} role="tab" aria-controls="login" aria-selected={this.state.selectedLogin}>Login</a>
+                        <a onClick={this.handleState} className="nav-link btnLogin" id="login-tab" data-toggle="tab" href="#login" onClick={this.handleState} role="tab" aria-controls="login" aria-selected="false">Login</a>
                     </li>
                     <li className="nav-item">
-                        <a onClick={this.handleState} className="nav-link btnLogin" id="register-tab" data-toggle="tab" href="#register" onClick={this.handleState} role="tab" aria-controls="register" aria-selected={this.state.selectedRegister}>Register</a>
+                        <a onClick={this.handleState} className="nav-link btnLogin" id="register-tab" data-toggle="tab" href="#register" onClick={this.handleState} role="tab" aria-controls="register" aria-selected="false">Register</a>
                     </li>
                 </ul>
             </div>

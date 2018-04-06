@@ -11,23 +11,25 @@ class Comment extends React.Component {
             profile: []
 
         }
+        console.log(props);
+      
     }
 
 
     componentDidMount() {
-        console.log(this.props.data.authorId);
+       
         postService.getUser(`${url}${usersUrl}/${this.props.data.authorId}`)
-            .then(users => {
-                console.log(users);
+            .then(users => { 
                 this.setState({
                     user: users
                 })
             })
 
     }
+    
 
     render() {
-        console.log(this.state.user.name);
+        
 
 
         return (
