@@ -8,5 +8,5 @@ HACKER-NEWS
 Getting Started
 Clone this repository on your computer, then go to the directory, type in your terminal npm install or yarn, then type npm start or yarn start or just go to the link:
 
-(https://execom-hacker.surge.sh)
+(https://wonderful-bee.surge.sh)
 
